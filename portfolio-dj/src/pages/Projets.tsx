@@ -35,7 +35,7 @@ export default function Projects() {
           title="Gestion d'équipe de basket en Java"
           description="Projet synthèse de Prog Orienté Objet. Gestion d'équipe de basketball et UX en Java Swing."
           repoUrl="https://github.com/Cuplan/BasketTeam_Poo.git"
-          image=""
+          image="basket.png"
         />
       </div>
 
