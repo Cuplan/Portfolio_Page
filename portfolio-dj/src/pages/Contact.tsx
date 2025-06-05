@@ -45,10 +45,10 @@ export default function Contact() {
         <h2 className="text-xl font-semibold text-gray-700">Liens importants</h2>
         <ul className="space-y-2 text-indigo-600">
           <li className="flex items-center gap-2">
-            <FaGithub /> <a href="https://github.com/dylanjohnson" target="_blank">GitHub</a>
+            <FaGithub /> <a href="https://github.com/Cuplan" target="_blank">GitHub</a>
           </li>
           <li className="flex items-center gap-2">
-            <FaLinkedin /> <a href="https://linkedin.com/in/dylanjohnson" target="_blank">LinkedIn</a>
+            <FaLinkedin /> <a href="https://www.linkedin.com/in/dylan-johnson-447681280/" target="_blank">LinkedIn</a>
           </li>
           <li className="flex items-center gap-2">
             <FaEnvelope /> <a href="mailto:dylan.johnson.dev@gmail.com">dylan.johnson.dev@gmail.com</a>
