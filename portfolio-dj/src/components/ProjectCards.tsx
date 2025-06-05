@@ -1,16 +1,17 @@
-// src/components/ProjectCards.tsx
 import React from "react";
 
 interface ProjectCardsProps {
   title: string;
   description: string;
   repoUrl: string;
+  image: string;
 }
 
 export default function ProjectCards({
   title,
   description,
   repoUrl,
+  image
 }: ProjectCardsProps) {
   return (
     <a
@@ -27,6 +28,12 @@ export default function ProjectCards({
         transition-all duration-200
       "
     >
+      <img
+        src={image}
+        alt={`Aperçu de ${title}`}
+        className=" w-full h-40 object-cover rounded-md mb-4 mx-auto"
+      />
+
       <h3 className="text-xl font-semibold mb-2 text-amber-800 dark:text-amber-200">
         {title}
       </h3>

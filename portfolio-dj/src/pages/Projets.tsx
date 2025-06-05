@@ -21,18 +21,21 @@ export default function Projects() {
           description="Un modèle prédictif très simple sur Java utilisant la bibliothèque Weka.
             Permet de tester rapidement la base du machine learning en Java."
           repoUrl="https://github.com/Cuplan/projetML.git"
+          image="/weka.png"
         />
 
         <ProjectCards
           title="Gestion d'API Naruto (Projet d'école)"
           description="Site gérant l'API dattebayo. Premier vrai projet en React + JavaScript."
           repoUrl="https://github.com/Cuplan/ProjetDevWeb2.git"
+          image=""
         />
 
         <ProjectCards
           title="Gestion d'équipe de basket en Java"
           description="Projet synthèse de Prog Orienté Objet. Gestion d'équipe de basketball et UX en Java Swing."
           repoUrl="https://github.com/Cuplan/BasketTeam_Poo.git"
+          image=""
         />
       </div>
 
