@@ -28,7 +28,7 @@ export default function Projects() {
           title="Gestion d'API Naruto (Projet d'école)"
           description="Site gérant l'API dattebayo. Premier vrai projet en React + JavaScript."
           repoUrl="https://github.com/Cuplan/ProjetDevWeb2.git"
-          image=""
+          image="api-naru.png"
         />
 
         <ProjectCards
