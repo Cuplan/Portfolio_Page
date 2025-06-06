@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../hooks/useTheme";
+import { Typewriter } from "react-simple-typewriter";
 
 // On importe les icônes depuis react-icons/si (Simple Icons)
 import {
@@ -17,11 +18,9 @@ import {
   SiAdobeillustrator,
   SiJavascript,
   SiFigma,
-
 } from "react-icons/si";
 import { FaFileExcel } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
-
 
 const temoignages = [
   {
@@ -32,8 +31,7 @@ const temoignages = [
     entreprise: "Bonbons Mélangés",
   },
   {
-    citation:
-      "Dylan est l'un des collaborateurs les plus créatifs et fiables avec qui j'ai travaillé.",
+    citation: "Dylan est un bénévole fiable et efficace.",
     nom: "Louise Nicolas",
     titre: "Directrice générale et artistique",
     entreprise: "Galerie d'art du Parc",
@@ -49,6 +47,14 @@ const temoignages = [
 
 export default function Home() {
   const [indexAct, setIndexAct] = useState(0);
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setIndexAct((prev) => (prev + 1) % temoignages.length);
+  }, 10000); // Change toutes les 10 secondes
+
+  return () => clearInterval(interval);
+}, []);
+
   useTheme(); // pour que <html class="dark"> soit appliqué
 
   return (
@@ -72,7 +78,9 @@ export default function Home() {
       >
         {/* PHOTO */}
         <div className="md:w-1/3 flex justify-center items-start">
-          <img
+          <motion.img
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.4 }}
             src="/ma-photo.jpg"
             alt="Dylan Johnson"
             className="rounded-full w-72 h-72 object-cover border-4 border-amber-600 dark:border-amber-300 shadow-md"
@@ -83,16 +91,25 @@ export default function Home() {
         <div className="md:w-2/3 space-y-6">
           {/* TITRE PRINCIPAL */}
           <h1 className="text-4xl font-bold text-amber-800 dark:text-amber-200 leading-tight">
-            Salut, moi c'est Dylan Johnson !
+            <Typewriter
+              words={["Salut, moi c'est Dylan Johnson !"]}
+              loop={false}
+              cursor
+              cursorStyle="|"
+              typeSpeed={75}
+              deleteSpeed={40}
+              delaySpeed={5000}
+            />
           </h1>
 
           {/* PARAGRAPHE */}
           <p className="text-gray-700 dark:text-gray-200 text-base leading-relaxed">
-            Étudiant en informatique passionné par l'IA et la data science. Je combine
-            logique, créativité et curiosité pour résoudre des problèmes techniques
-            efficacement et rapidement. Grâce à mes expériences, je peux m'adapter à
-            n'importe quelle situation et apprendre très rapidement. Motivé pour le travail,
-            je suis ouvert à toutes opportunités.
+            Étudiant en informatique passionné par l'IA et la data science. Je
+            combine logique, créativité et curiosité pour résoudre des problèmes
+            techniques efficacement et rapidement. Grâce à mes expériences, je
+            peux m'adapter à n'importe quelle situation et apprendre très
+            rapidement. Motivé pour le travail, je suis ouvert à toutes
+            opportunités.
           </p>
 
           {/* COMPÉTENCES */}
@@ -220,40 +237,11 @@ export default function Home() {
               >
                 “{temoignages[indexAct].citation}”
                 <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                  — {temoignages[indexAct].nom}, {temoignages[indexAct].titre} @ 
+                  — {temoignages[indexAct].nom}, {temoignages[indexAct].titre} @
                   {temoignages[indexAct].entreprise}
                 </p>
               </motion.blockquote>
             </AnimatePresence>
-
-            <div className="flex justify-end gap-2 mt-3">
-              <button
-                onClick={() => setIndexAct((prev) => Math.max(prev - 1, 0))}
-                disabled={indexAct === 0}
-                className={`px-3 py-1 text-xs rounded-md border ${
-                  indexAct === 0
-                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    : "bg-amber-500 text-white hover:bg-amber-600"
-                }`}
-              >
-                ←
-              </button>
-              <button
-                onClick={() =>
-                  setIndexAct((prev) =>
-                    Math.min(prev + 1, temoignages.length - 1)
-                  )
-                }
-                disabled={indexAct === temoignages.length - 1}
-                className={`px-3 py-1 text-xs rounded-md border ${
-                  indexAct === temoignages.length - 1
-                    ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                    : "bg-amber-500 text-white hover:bg-amber-600"
-                }`}
-              >
-                →
-              </button>
-            </div>
           </div>
         </div>
       </div>
