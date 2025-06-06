@@ -14,7 +14,6 @@ import {
   SiMysql,
   SiPython,
   SiPandas,
-  SiScikitlearn,
   SiAdobeillustrator,
   SiJavascript,
   SiFigma,
@@ -92,8 +91,8 @@ export default function Home() {
           {/* TITRE PRINCIPAL */}
           <h1 className="text-4xl font-bold text-amber-800 dark:text-amber-200 leading-tight">
             <Typewriter
-              words={["Salut, moi c'est Dylan Johnson !"]}
-              loop={false}
+              words={["Salut, moi c'est Dylan Johnson !", " Hi, i'm Dylan Johnson!"]}
+              loop={true}
               cursor
               cursorStyle="|"
               typeSpeed={75}
