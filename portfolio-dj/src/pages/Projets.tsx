@@ -37,6 +37,14 @@ export default function Projects() {
           repoUrl="https://github.com/Cuplan/BasketTeam_Poo.git"
           image="basket.png"
         />
+
+        <ProjectCards
+          title="Gestion de mots de passe en Python"
+          description="Gestionnaire de mot de passe sur Python. Gestion des connexions, base de données d'utilisateurs,Génération de mot de passe,
+          Stockage des mots de passes personnels, Library Ttkinter... <!> EN CONSTRUCTION <!> "
+          repoUrl="https://github.com/Cuplan/Mdp_Gestionnaire.git"
+          image="gestionmdp.jpg"
+        />
       </div>
 
       {/* 
