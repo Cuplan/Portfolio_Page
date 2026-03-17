@@ -8,12 +8,21 @@ export default function Projects() {
     <section className="min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-8">
 
-        <h1 className="text-2xl font-bold text-stone-600 dark:text-green-400 mb-1">
-          {t.projects.title}
-        </h1>
-        <p className="text-sm text-stone-500 dark:text-zinc-500 mb-6">
-          {t.projects.subtitle}
-        </p>
+        {/* Terminal header */}
+        <div className="mb-6 border-b border-emerald-600/15 dark:border-green-500/15 pb-4">
+          <div className="flex items-center gap-2">
+            <span className="text-emerald-600 dark:text-green-600 text-sm select-none">$</span>
+            <span className="text-emerald-800 dark:text-green-400 text-sm font-bold">
+              ls -la ./projects/
+            </span>
+          </div>
+          <p className="text-xs text-stone-500 dark:text-zinc-500 pl-5 mt-1">
+            {t.projects.subtitle}
+          </p>
+          <p className="text-xs text-emerald-600/40 dark:text-green-600/30 pl-5 mt-0.5 select-none">
+            total {t.projects.items.length} items
+          </p>
+        </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.projects.items.map((project) => (

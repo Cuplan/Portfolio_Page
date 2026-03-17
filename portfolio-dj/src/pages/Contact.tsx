@@ -1,153 +1,157 @@
 import React, { useState } from "react";
 import { useLang } from "../hooks/useLang";
+import { TermWindow, Prompt } from "../components/TermWindow";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaPhone } from "react-icons/fa";
 
 export default function Contact() {
   const { t } = useLang();
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-
     if (!name || !email || !message) {
       alert(t.contact.validation);
       return;
     }
-
     const subject = encodeURIComponent(`${t.contact.subjectPrefix} ${name}`);
     const body = encodeURIComponent(
       `Nom : ${name}\nCourriel : ${email}\n\nMessage :\n${message}`
     );
-
     window.location.href = `mailto:johnsondylan14@gmail.com?subject=${subject}&body=${body}`;
   }
 
-  const inputClass = `
-    w-full
-    bg-day-card dark:bg-zinc-900
-    border border-stone-200 dark:border-zinc-700
-    text-stone-700 dark:text-zinc-100
-    rounded px-4 py-2
-    placeholder-stone-400 dark:placeholder-zinc-500
-    focus:outline-none focus:ring-2 focus:ring-emerald-400 dark:focus:ring-green-500
-    transition-colors duration-300
-  `;
+  const inputBase =
+    "w-full bg-transparent border-0 border-b border-emerald-600/25 dark:border-green-500/25 text-stone-800 dark:text-green-300 text-sm px-2 py-1.5 placeholder-emerald-600/30 dark:placeholder-green-600/25 focus:outline-none focus:border-emerald-500 dark:focus:border-green-400 transition-colors duration-200";
+
+  const contacts = [
+    {
+      icon: <FaGithub />,
+      label: "github.com/Cuplan",
+      href: "https://github.com/Cuplan",
+    },
+    {
+      icon: <FaLinkedin />,
+      label: "linkedin — dylan-johnson-447681280",
+      href: "https://www.linkedin.com/in/dylan-johnson-447681280/",
+    },
+    {
+      icon: <FaEnvelope />,
+      label: "johnsondylan14@gmail.com",
+      href: "mailto:johnsondylan14@gmail.com",
+    },
+    {
+      icon: <FaPhone />,
+      label: "(873) 307-0499",
+      href: "tel:+18733070499",
+    },
+  ];
 
   return (
     <section className="min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
-      <div className="max-w-3xl mx-auto p-8 space-y-8">
-        <h1 className="text-3xl font-bold text-stone-600 dark:text-green-400 transition-colors duration-300">
-          {t.contact.title}
-        </h1>
+      <div className="max-w-2xl mx-auto px-4 py-10">
+        <TermWindow title="~/contact.sh">
+          <div className="p-6 space-y-7">
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <input
-            type="text"
-            placeholder={t.contact.namePlaceholder}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className={inputClass}
-          />
-          <input
-            type="email"
-            placeholder={t.contact.emailPlaceholder}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className={inputClass}
-          />
-          <textarea
-            placeholder={t.contact.messagePlaceholder}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            required
-            rows={5}
-            className={inputClass}
-          />
-          <button
-            type="submit"
-            className="
-              bg-emerald-600 dark:bg-green-600
-              text-white
-              px-6 py-2 rounded
-              hover:bg-emerald-700 dark:hover:bg-green-500
-              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 dark:focus:ring-green-500
-              transition-all duration-200
-            "
-          >
-            {t.contact.send}
-          </button>
-        </form>
+            {/* Header */}
+            <div>
+              <Prompt cmd="./contact.sh" />
+              <p className="text-xs text-stone-500 dark:text-zinc-500 pl-5">{t.contact.title}</p>
+            </div>
 
-        <div className="space-y-2">
-          <h2 className="text-xl font-semibold text-emerald-700 dark:text-green-400 transition-colors duration-300">
-            {t.contact.linksTitle}
-          </h2>
-          <ul className="space-y-2">
-            <li className="flex items-center gap-2 text-stone-700 dark:text-zinc-300 transition-colors duration-300">
-              <FaGithub className="text-emerald-700 dark:text-green-400" />
-              <a
-                href="https://github.com/Cuplan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-emerald-600 dark:hover:text-green-300 transition-colors duration-200"
-              >
-                GitHub
-              </a>
-            </li>
-            <li className="flex items-center gap-2 text-stone-700 dark:text-zinc-300 transition-colors duration-300">
-              <FaLinkedin className="text-emerald-700 dark:text-green-400" />
-              <a
-                href="https://www.linkedin.com/in/dylan-johnson-447681280/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-emerald-600 dark:hover:text-green-300 transition-colors duration-200"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li className="flex items-center gap-2 text-stone-700 dark:text-zinc-300 transition-colors duration-300">
-              <FaEnvelope className="text-emerald-700 dark:text-green-400" />
-              <a
-                href="mailto:johnsondylan14@gmail.com"
-                className="hover:text-emerald-600 dark:hover:text-green-300 transition-colors duration-200"
-              >
-                johnsondylan14@gmail.com
-              </a>
-            </li>
-            <li className="flex items-center gap-2 text-stone-700 dark:text-zinc-300 transition-colors duration-300">
-              <FaPhone className="text-emerald-700 dark:text-green-400" />
-              <a
-                href="tel:+18733070499"
-                className="hover:text-emerald-600 dark:hover:text-green-300 transition-colors duration-200"
-              >
-                (873) 307-0499
-              </a>
-            </li>
-          </ul>
-        </div>
+            {/* Form */}
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="text-emerald-600 dark:text-green-600 text-sm shrink-0 w-16 text-right select-none">
+                  {t.contact.namePlaceholder}:
+                </span>
+                <input
+                  type="text"
+                  placeholder="_"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className={inputBase}
+                />
+              </div>
 
-        <div>
-          <a
-            href="/cv_Dylan.pdf"
-            download
-            className="
-              inline-flex items-center
-              bg-stone-800 dark:bg-green-600
-              text-white
-              px-4 py-2 rounded
-              hover:bg-stone-900 dark:hover:bg-green-500
-              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 dark:focus:ring-green-500
-              transition-colors duration-200
-            "
-          >
-            <FaFileDownload className="mr-2" /> {t.contact.downloadCV}
-          </a>
-        </div>
+              <div className="flex items-center gap-3">
+                <span className="text-emerald-600 dark:text-green-600 text-sm shrink-0 w-16 text-right select-none">
+                  {t.contact.emailPlaceholder}:
+                </span>
+                <input
+                  type="email"
+                  placeholder="_"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className={inputBase}
+                />
+              </div>
+
+              <div className="flex gap-3 items-start">
+                <span className="text-emerald-600 dark:text-green-600 text-sm shrink-0 w-16 text-right pt-2 select-none">
+                  msg:
+                </span>
+                <textarea
+                  placeholder="_"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  rows={5}
+                  className={`${inputBase} resize-none`}
+                />
+              </div>
+
+              <div className="pl-[4.75rem]">
+                <button
+                  type="submit"
+                  className="text-sm text-white dark:text-black bg-emerald-600 dark:bg-green-400 px-5 py-1.5 hover:bg-emerald-500 dark:hover:bg-green-300 active:scale-95 transition-all duration-150 tracking-widest"
+                >
+                  ./send
+                </button>
+              </div>
+            </form>
+
+            {/* Links */}
+            <div>
+              <Prompt cmd="cat links.json" />
+              <ul className="space-y-2 pl-5">
+                {contacts.map(({ icon, label, href }) => (
+                  <li key={href} className="flex items-center gap-2 text-sm">
+                    <span className="text-emerald-600/50 dark:text-green-600/40 text-xs select-none">▸</span>
+                    <span className="text-emerald-600 dark:text-green-500/70 text-base">{icon}</span>
+                    <a
+                      href={href}
+                      target={href.startsWith("http") ? "_blank" : undefined}
+                      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-stone-700 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-green-400 transition-colors text-sm"
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CV download */}
+            <div>
+              <Prompt cmd="./download --cv" />
+              <div className="pl-5">
+                <a
+                  href="/cv_Dylan.pdf"
+                  download
+                  className="inline-flex items-center gap-2 text-sm border border-emerald-600/25 dark:border-green-500/25 text-emerald-700 dark:text-green-400 px-4 py-1.5 hover:bg-emerald-600/10 dark:hover:bg-green-500/10 transition-colors duration-150"
+                >
+                  <FaFileDownload size={12} />
+                  {t.contact.downloadCV}
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </TermWindow>
       </div>
     </section>
   );

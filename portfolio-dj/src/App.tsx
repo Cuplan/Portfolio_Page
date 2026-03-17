@@ -26,7 +26,7 @@ function App() {
   return (
     <LangProvider>
       {showIntro && <TerminalIntro onEnter={handleEnter} />}
-      <div className="flex flex-col min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
+      <div className="flex flex-col min-h-screen font-mono bg-day-bg dark:bg-dj-black transition-colors duration-300">
         <Navbar />
 
         <main className="flex-grow">
