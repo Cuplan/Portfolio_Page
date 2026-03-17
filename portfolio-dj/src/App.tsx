@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Projets from "./pages/Projets";
@@ -7,12 +8,24 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { useTheme } from "./hooks/useTheme";
 import { LangProvider } from "./hooks/useLang";
+import { TerminalIntro } from "./components/TerminalIntro";
+
+const SESSION_KEY = "portfolio-intro-shown";
 
 function App() {
   const { theme } = useTheme();
+  const [showIntro, setShowIntro] = useState(
+    () => !sessionStorage.getItem(SESSION_KEY)
+  );
+
+  const handleEnter = () => {
+    sessionStorage.setItem(SESSION_KEY, "1");
+    setShowIntro(false);
+  };
 
   return (
     <LangProvider>
+      {showIntro && <TerminalIntro onEnter={handleEnter} />}
       <div className="flex flex-col min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
         <Navbar />
 
