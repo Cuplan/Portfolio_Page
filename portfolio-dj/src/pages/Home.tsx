@@ -37,13 +37,13 @@ export default function Home() {
         flex items-center justify-center
         px-4 py-12
         transition-colors duration-300
-        bg-stone-50 dark:bg-dj-black
+        bg-day-bg dark:bg-dj-black
       "
     >
       <div
         className="
           max-w-5xl w-full
-          bg-white dark:bg-dj-card
+          bg-day-card dark:bg-dj-card
           shadow-md dark:border dark:border-zinc-800
           rounded-2xl p-8
           flex flex-col md:flex-row gap-10
@@ -63,7 +63,7 @@ export default function Home() {
 
         {/* CONTENT */}
         <div className="md:w-2/3 space-y-6">
-          <h1 className="text-4xl font-bold text-stone-800 dark:text-green-400 leading-tight">
+          <h1 className="text-4xl font-bold text-stone-600 dark:text-green-400 leading-tight">
             <Typewriter
               words={t.home.typewriterWords}
               loop={true}

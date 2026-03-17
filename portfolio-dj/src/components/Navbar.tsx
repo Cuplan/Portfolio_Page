@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav
       className="
         w-full
-        bg-stone-100 text-stone-800
+        bg-day-nav text-stone-700
         dark:bg-dj-nav dark:text-green-400
         shadow-sm dark:border-b dark:border-zinc-800
         px-4 sm:px-6 py-4
@@ -57,7 +57,7 @@ export default function Navbar() {
             aria-label="Toggle language"
             className="
               px-2 py-1 rounded-md text-xs font-semibold tracking-wider
-              bg-stone-200 hover:bg-stone-300
+              bg-day-card hover:bg-stone-200
               dark:bg-zinc-800 dark:hover:bg-zinc-700
               text-stone-700 dark:text-green-400
               transition-all duration-200
@@ -73,7 +73,7 @@ export default function Navbar() {
             aria-label="Toggle Dark/Light Mode"
             className="
               p-2 rounded-md
-              bg-stone-200 hover:bg-stone-300
+              bg-day-card hover:bg-stone-200
               dark:bg-zinc-800 dark:hover:bg-zinc-700
               text-stone-700 dark:text-green-400
               transition-all duration-200

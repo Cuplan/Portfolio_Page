@@ -7,9 +7,9 @@ export default function Footer() {
   return (
     <footer
       className="
-        bg-stone-100 text-stone-700
+        bg-day-nav text-stone-600
         dark:bg-dj-nav dark:text-zinc-400
-        border-t border-stone-200 dark:border-zinc-800
+        border-t border-day-bg dark:border-zinc-800
         py-6 mt-20
         transition-colors duration-300
       "

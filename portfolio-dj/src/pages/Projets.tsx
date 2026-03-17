@@ -5,10 +5,10 @@ export default function Projects() {
   const { t } = useLang();
 
   return (
-    <section className="min-h-screen bg-stone-50 dark:bg-dj-black transition-colors duration-300">
+    <section className="min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-8">
 
-        <h1 className="text-2xl font-bold text-stone-800 dark:text-green-400 mb-1">
+        <h1 className="text-2xl font-bold text-stone-600 dark:text-green-400 mb-1">
           {t.projects.title}
         </h1>
         <p className="text-sm text-stone-500 dark:text-zinc-500 mb-6">

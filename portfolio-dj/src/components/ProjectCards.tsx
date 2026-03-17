@@ -22,8 +22,8 @@ export default function ProjectCards({
       rel="noopener noreferrer"
       className="
         flex flex-col
-        bg-white dark:bg-dj-card
-        text-stone-900 dark:text-zinc-100
+        bg-day-card dark:bg-dj-card
+        text-stone-700 dark:text-zinc-100
         border border-stone-200 dark:border-zinc-800
         hover:border-emerald-400 dark:hover:border-green-600
         rounded-xl

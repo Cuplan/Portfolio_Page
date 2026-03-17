@@ -27,9 +27,9 @@ export default function Contact() {
 
   const inputClass = `
     w-full
-    bg-white dark:bg-zinc-900
-    border border-stone-300 dark:border-zinc-700
-    text-stone-900 dark:text-zinc-100
+    bg-day-card dark:bg-zinc-900
+    border border-stone-200 dark:border-zinc-700
+    text-stone-700 dark:text-zinc-100
     rounded px-4 py-2
     placeholder-stone-400 dark:placeholder-zinc-500
     focus:outline-none focus:ring-2 focus:ring-emerald-400 dark:focus:ring-green-500
@@ -37,9 +37,9 @@ export default function Contact() {
   `;
 
   return (
-    <section className="min-h-screen bg-stone-50 dark:bg-dj-black transition-colors duration-300">
+    <section className="min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
       <div className="max-w-3xl mx-auto p-8 space-y-8">
-        <h1 className="text-3xl font-bold text-stone-800 dark:text-green-400 transition-colors duration-300">
+        <h1 className="text-3xl font-bold text-stone-600 dark:text-green-400 transition-colors duration-300">
           {t.contact.title}
         </h1>
 
