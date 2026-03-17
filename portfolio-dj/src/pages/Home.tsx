@@ -63,14 +63,15 @@ export default function Home() {
         flex items-center justify-center
         px-4 py-12
         transition-colors duration-300
-        bg-yellow-50 dark:bg-gray-800
+        bg-stone-50 dark:bg-dj-black
       "
     >
       <div
         className="
           max-w-5xl w-full
-          bg-yellow-100 dark:bg-gray-700
-          shadow-lg rounded-2xl p-8
+          bg-white dark:bg-dj-card
+          shadow-md dark:border dark:border-zinc-800
+          rounded-2xl p-8
           flex flex-col md:flex-row gap-10
           transition-colors duration-300
         "
@@ -82,14 +83,14 @@ export default function Home() {
             transition={{ duration: 0.4 }}
             src="/ma-photo.jpg"
             alt="Dylan Johnson"
-            className="rounded-full w-72 h-72 object-cover border-4 border-amber-600 dark:border-amber-300 shadow-md"
+            className="rounded-full w-72 h-72 object-cover border-4 border-emerald-500 dark:border-green-500 shadow-md"
           />
         </div>
 
         {/* CONTENU */}
         <div className="md:w-2/3 space-y-6">
           {/* TITRE PRINCIPAL */}
-          <h1 className="text-4xl font-bold text-amber-800 dark:text-amber-200 leading-tight">
+          <h1 className="text-4xl font-bold text-stone-800 dark:text-green-400 leading-tight">
             <Typewriter
               words={["Salut, moi c'est Dylan Johnson !", " Hi, i'm Dylan Johnson!"]}
               loop={true}
@@ -102,7 +103,7 @@ export default function Home() {
           </h1>
 
           {/* PARAGRAPHE */}
-          <p className="text-gray-700 dark:text-gray-200 text-base leading-relaxed">
+          <p className="text-stone-600 dark:text-zinc-300 text-base leading-relaxed">
             Étudiant en informatique passionné par l'IA et la data science. Je
             combine logique, créativité et curiosité pour résoudre des problèmes
             techniques efficacement et rapidement. Grâce à mes expériences, je
@@ -113,10 +114,10 @@ export default function Home() {
 
           {/* COMPÉTENCES */}
           <div>
-            <h2 className="text-lg font-semibold text-amber-700 dark:text-amber-300 mb-1">
+            <h2 className="text-lg font-semibold text-emerald-700 dark:text-green-400 mb-1">
               Compétences clés
             </h2>
-            <ul className="grid grid-cols-2 gap-x-4 list-none text-gray-700 dark:text-gray-200 text-sm">
+            <ul className="grid grid-cols-2 gap-x-4 list-none text-stone-600 dark:text-zinc-300 text-sm">
               {/* React + TypeScript + Tailwind */}
               <li className="flex items-center gap-2 mb-2">
                 <SiReact className="w-5 h-5 text-emerald-400 dark:text-emerald-300" />
@@ -187,7 +188,7 @@ export default function Home() {
 
               {/* Gestion d'équipe & conflits */}
               <li className="flex items-center gap-2 mb-2">
-                <span className="w-5 h-5 flex items-center justify-center bg-amber-400 dark:bg-amber-300 rounded text-gray-900 dark:text-gray-800">
+                <span className="w-5 h-5 flex items-center justify-center bg-emerald-100 dark:bg-zinc-800 rounded text-emerald-800 dark:text-green-400">
                   🤝
                 </span>
                 <span>Gestion d'équipe & conflits</span>
@@ -195,7 +196,7 @@ export default function Home() {
 
               {/* Soft skills : polyvalence, écoute, esprit d'équipe */}
               <li className="flex items-center gap-2 mb-2">
-                <span className="w-5 h-5 flex items-center justify-center bg-amber-400 dark:bg-amber-300 rounded text-gray-900 dark:text-gray-800">
+                <span className="w-5 h-5 flex items-center justify-center bg-emerald-100 dark:bg-zinc-800 rounded text-emerald-800 dark:text-green-400">
                   💡
                 </span>
                 <span>Soft skills : polyvalence, écoute, esprit d'équipe</span>
@@ -205,10 +206,10 @@ export default function Home() {
 
           {/* EXPÉRIENCES */}
           <div>
-            <h2 className="text-lg font-semibold text-amber-700 dark:text-amber-300 mb-1">
+            <h2 className="text-lg font-semibold text-emerald-700 dark:text-green-400 mb-1">
               Expériences pro
             </h2>
-            <ul className="list-disc list-inside text-gray-700 dark:text-gray-200 text-sm space-y-1">
+            <ul className="list-disc list-inside text-stone-600 dark:text-zinc-300 text-sm space-y-1">
               <li>Bonbons Mélangés - Responsable IT et site web</li>
               <li>Cégep de Trois-Rivières - Tuteur en programmation</li>
               <li>PTW - Testeur de jeux vidéo</li>
@@ -218,8 +219,8 @@ export default function Home() {
           </div>
 
           {/* TÉMOIGNAGES */}
-          <div className="mt-6 text-sm text-gray-600 dark:text-gray-300">
-            <h3 className="text-amber-600 dark:text-amber-400 font-medium mb-2">
+          <div className="mt-6 text-sm text-stone-500 dark:text-zinc-400">
+            <h3 className="text-emerald-600 dark:text-green-500 font-medium mb-2">
               Ce qu'on dit de moi
             </h3>
             <AnimatePresence mode="wait">
@@ -230,12 +231,12 @@ export default function Home() {
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.3 }}
                 className="
-                  border-l-[3px] border-amber-400 dark:border-amber-300
-                  pl-3 italic text-gray-700 dark:text-gray-100 leading-relaxed
+                  border-l-[3px] border-emerald-400 dark:border-green-500
+                  pl-3 italic text-stone-700 dark:text-zinc-200 leading-relaxed
                 "
               >
                 “{temoignages[indexAct].citation}”
-                <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                <p className="mt-2 text-xs text-stone-400 dark:text-zinc-500">
                   — {temoignages[indexAct].nom}, {temoignages[indexAct].titre} @
                   {temoignages[indexAct].entreprise}
                 </p>
