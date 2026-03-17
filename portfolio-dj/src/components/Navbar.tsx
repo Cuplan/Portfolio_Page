@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaGithub, FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "../hooks/useTheme";
+import { useLang } from "../hooks/useLang";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const { lang, t, toggleLang } = useLang();
 
   return (
     <nav
@@ -17,32 +19,26 @@ export default function Navbar() {
       "
     >
       <div className="max-w-screen-xl mx-auto flex flex-wrap justify-between items-center gap-4">
-        
-        {/* Nom du site */}
+
         <Link
           to="/"
-          className="
-            text-lg font-bold 
-            hover:text-emerald-700 dark:hover:text-green-300 
-            whitespace-nowrap
-          "
+          className="text-lg font-bold hover:text-emerald-700 dark:hover:text-green-300 whitespace-nowrap"
         >
-          Dylan Johnson – Développeur
+          {t.navbar.brand}
         </Link>
 
-        {/* Liens + icônes */}
         <div className="flex flex-wrap gap-4 items-center justify-end">
-          
+
           <Link to="/" className="hover:text-emerald-700 dark:hover:text-green-300">
-            Accueil
+            {t.navbar.home}
           </Link>
 
           <Link to="/projets" className="hover:text-emerald-700 dark:hover:text-green-300">
-            Projets
+            {t.navbar.projects}
           </Link>
 
           <Link to="/contact" className="hover:text-emerald-700 dark:hover:text-green-300">
-            Contact
+            {t.navbar.contact}
           </Link>
 
           <a
@@ -55,7 +51,23 @@ export default function Navbar() {
             <FaGithub size={22} />
           </a>
 
-          {/* Toggle Dark/Light */}
+          {/* Lang toggle */}
+          <button
+            onClick={toggleLang}
+            aria-label="Toggle language"
+            className="
+              px-2 py-1 rounded-md text-xs font-semibold tracking-wider
+              bg-stone-200 hover:bg-stone-300
+              dark:bg-zinc-800 dark:hover:bg-zinc-700
+              text-stone-700 dark:text-green-400
+              transition-all duration-200
+              focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500
+            "
+          >
+            {lang === "fr" ? "EN" : "FR"}
+          </button>
+
+          {/* Dark/Light toggle */}
           <button
             onClick={toggleTheme}
             aria-label="Toggle Dark/Light Mode"

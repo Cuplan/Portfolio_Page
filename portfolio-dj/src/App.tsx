@@ -5,27 +5,28 @@ import Projets from "./pages/Projets";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { useTheme } from "./hooks/useTheme"; //  on importe le hook
+import { useTheme } from "./hooks/useTheme";
+import { LangProvider } from "./hooks/useLang";
 
 function App() {
-  //  On fait monter le hook ici : dès que App est exécuté, il gère <html class="dark">
   const { theme } = useTheme();
 
   return (
-    //  On ajoute bg-light/dark + text-light/dark pour tout le site
-    <div className="flex flex-col min-h-screen bg-stone-50 dark:bg-dj-black transition-colors duration-300">
-      <Navbar />
+    <LangProvider>
+      <div className="flex flex-col min-h-screen bg-stone-50 dark:bg-dj-black transition-colors duration-300">
+        <Navbar />
 
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projets" element={<Projets />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projets" element={<Projets />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LangProvider>
   );
 }
 

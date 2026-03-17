@@ -5,6 +5,7 @@ interface ProjectCardsProps {
   description: string;
   repoUrl: string;
   image: string;
+  viewCode: string;
 }
 
 export default function ProjectCards({
@@ -12,6 +13,7 @@ export default function ProjectCards({
   description,
   repoUrl,
   image,
+  viewCode,
 }: ProjectCardsProps) {
   return (
     <a
@@ -46,7 +48,7 @@ export default function ProjectCards({
         </p>
         <div className="flex items-center gap-1.5 mt-3 text-xs text-stone-400 dark:text-zinc-600">
           <FaGithub size={12} />
-          <span>Voir le code</span>
+          <span>{viewCode}</span>
         </div>
       </div>
     </a>

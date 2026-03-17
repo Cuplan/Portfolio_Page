@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "../hooks/useTheme";
 import { Typewriter } from "react-simple-typewriter";
+import { useLang } from "../hooks/useLang";
 
 import {
   SiReact,
@@ -13,40 +13,22 @@ import {
 } from "react-icons/si";
 import { FaFileExcel, FaJava, FaRobot } from "react-icons/fa";
 
-const temoignages = [
-  {
-    citation:
-      "Toujours prêt à apprendre et à livrer du travail de qualité, même sous pression.",
-    nom: "Annie Thivierge",
-    titre: "CEO",
-    entreprise: "Bonbons Mélangés",
-  },
-  {
-    citation: "Dylan est un bénévole fiable et efficace.",
-    nom: "Louise Nicolas",
-    titre: "Directrice générale et artistique",
-    entreprise: "Galerie d'art du Parc",
-  },
-  {
-    citation:
-      "Dylan s'est distingué par son sérieux, son engagement et une attitude exemplaire.",
-    nom: "Maxime Faucher",
-    titre: "Enseignant",
-    entreprise: "Cégep de Trois-Rivières",
-  },
-];
-
 export default function Home() {
+  const { t } = useLang();
+  const testimonials = t.home.testimonials;
+
   const [indexAct, setIndexAct] = useState(0);
+
   useEffect(() => {
-  const interval = setInterval(() => {
-    setIndexAct((prev) => (prev + 1) % temoignages.length);
-  }, 10000); // Change toutes les 10 secondes
+    setIndexAct(0);
+  }, [testimonials]);
 
-  return () => clearInterval(interval);
-}, []);
-
-  useTheme(); // pour que <html class="dark"> soit appliqué
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndexAct((prev) => (prev + 1) % testimonials.length);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, [testimonials]);
 
   return (
     <section
@@ -79,12 +61,11 @@ export default function Home() {
           />
         </div>
 
-        {/* CONTENU */}
+        {/* CONTENT */}
         <div className="md:w-2/3 space-y-6">
-          {/* TITRE PRINCIPAL */}
           <h1 className="text-4xl font-bold text-stone-800 dark:text-green-400 leading-tight">
             <Typewriter
-              words={["Salut, moi c'est Dylan Johnson !", " Hi, i'm Dylan Johnson!"]}
+              words={t.home.typewriterWords}
               loop={true}
               cursor
               cursorStyle="|"
@@ -94,20 +75,14 @@ export default function Home() {
             />
           </h1>
 
-          {/* PARAGRAPHE */}
           <p className="text-stone-600 dark:text-zinc-300 text-base leading-relaxed">
-            Étudiant en informatique passionné par l'IA et la data science. Je
-            combine logique, créativité et curiosité pour résoudre des problèmes
-            techniques efficacement et rapidement. Grâce à mes expériences, je
-            peux m'adapter à n'importe quelle situation et apprendre très
-            rapidement. Motivé pour le travail, je suis ouvert à toutes
-            opportunités.
+            {t.home.bio}
           </p>
 
-          {/* COMPÉTENCES */}
+          {/* SKILLS */}
           <div>
             <h2 className="text-lg font-semibold text-emerald-700 dark:text-green-400 mb-1">
-              Compétences clés
+              {t.home.skillsTitle}
             </h2>
             <ul className="grid grid-cols-2 gap-x-4 list-none text-stone-600 dark:text-zinc-300 text-sm">
               <li className="flex items-center gap-2 mb-2">
@@ -136,50 +111,47 @@ export default function Home() {
               </li>
               <li className="flex items-center gap-2 mb-2 col-span-2">
                 <SiPandas className="w-5 h-5 text-blue-400 dark:text-blue-300" />
-                <span>Machine Learning (Weka, pandas, scikit-learn)</span>
+                <span>{t.home.skills.ml}</span>
               </li>
               <li className="flex items-center gap-2 mb-2 col-span-2">
                 <FaRobot className="w-5 h-5 text-emerald-500 dark:text-green-400" />
-                <span>Outils IA (Claude, ChatGPT, Cursor…)</span>
+                <span>{t.home.skills.aiTools}</span>
               </li>
               <li className="flex items-center gap-2 mb-2">
                 <FaFileExcel className="w-5 h-5 text-green-500 dark:text-green-400" />
-                <span>Excel & bases de données</span>
+                <span>{t.home.skills.excel}</span>
               </li>
               <li className="flex items-center gap-2 mb-2">
                 <span className="w-5 h-5 flex items-center justify-center bg-emerald-100 dark:bg-zinc-800 rounded text-emerald-800 dark:text-green-400">
                   🤝
                 </span>
-                <span>Gestion d'équipe</span>
+                <span>{t.home.skills.teamManagement}</span>
               </li>
               <li className="flex items-center gap-2 mb-2 col-span-2">
                 <span className="w-5 h-5 flex items-center justify-center bg-emerald-100 dark:bg-zinc-800 rounded text-emerald-800 dark:text-green-400">
                   💡
                 </span>
-                <span>Polyvalence, écoute, esprit d'équipe</span>
+                <span>{t.home.skills.softSkills}</span>
               </li>
             </ul>
           </div>
 
-          {/* EXPÉRIENCES */}
+          {/* EXPERIENCE */}
           <div>
             <h2 className="text-lg font-semibold text-emerald-700 dark:text-green-400 mb-1">
-              Expériences pro
+              {t.home.experienceTitle}
             </h2>
             <ul className="list-disc list-inside text-stone-600 dark:text-zinc-300 text-sm space-y-1">
-              <li>Transport Valois - Stage en informatique</li>
-              <li>Bonbons Mélangés - Responsable IT et site web</li>
-              <li>Cégep de Trois-Rivières - Tuteur en programmation</li>
-              <li>PTW - Testeur de jeux vidéo</li>
-              <li>Ville de Montréal - Col blanc</li>
-              <li>Bénévolat - Galerie d'art du Parc</li>
+              {t.home.experiences.map((exp) => (
+                <li key={exp}>{exp}</li>
+              ))}
             </ul>
           </div>
 
-          {/* TÉMOIGNAGES */}
+          {/* TESTIMONIALS */}
           <div className="mt-6 text-sm text-stone-500 dark:text-zinc-400">
             <h3 className="text-emerald-600 dark:text-green-500 font-medium mb-2">
-              Ce qu'on dit de moi
+              {t.home.testimonialsTitle}
             </h3>
             <AnimatePresence mode="wait">
               <motion.blockquote
@@ -193,10 +165,9 @@ export default function Home() {
                   pl-3 italic text-stone-700 dark:text-zinc-200 leading-relaxed
                 "
               >
-                “{temoignages[indexAct].citation}”
+                "{testimonials[indexAct].citation}"
                 <p className="mt-2 text-xs text-stone-400 dark:text-zinc-500">
-                  — {temoignages[indexAct].nom}, {temoignages[indexAct].titre} @
-                  {temoignages[indexAct].entreprise}
+                  — {testimonials[indexAct].name}, {testimonials[indexAct].title} @ {testimonials[indexAct].company}
                 </p>
               </motion.blockquote>
             </AnimatePresence>

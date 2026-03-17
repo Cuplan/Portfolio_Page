@@ -1,6 +1,9 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { useLang } from "../hooks/useLang";
 
 export default function Footer() {
+  const { t } = useLang();
+
   return (
     <footer
       className="
@@ -9,10 +12,11 @@ export default function Footer() {
         border-t border-stone-200 dark:border-zinc-800
         py-6 mt-20
         transition-colors duration-300
-      ">
+      "
+    >
       <div className="w-full max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <p className="text-sm mb-4 md:mb-0">
-          Fait avec 💻 & ☕ par Dylan Johnson © {new Date().getFullYear()}
+          {t.footer.madeWith} {new Date().getFullYear()}
         </p>
 
         <div className="flex space-x-4 text-xl">
@@ -33,7 +37,7 @@ export default function Footer() {
             <FaLinkedin />
           </a>
           <a
-            href="mailto:dylan.johnson.dev@gmail.com"
+            href="mailto:johnsondylan14@gmail.com"
             className="hover:text-emerald-600 dark:hover:text-green-400"
           >
             <FaEnvelope />
@@ -43,4 +47,3 @@ export default function Footer() {
     </footer>
   );
 }
-
