@@ -5,14 +5,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Dark mode
+        // Terminal dark mode
         "dj-black": "#0a0a0a",
         "dj-card": "#111111",
         "dj-nav": "#080808",
-        // Light mode — warm off-whites, not pure white
-        "day-bg": "#f2ede7",
-        "day-card": "#faf8f5",
-        "day-nav": "#e8e3db",
+        // Notepad++ day mode 🖊️
+        "day-bg":     "#2b2b2b", // charcoal background
+        "day-card":   "#323232", // panel / card
+        "day-nav":    "#1c1c1c", // titlebar / statusbar
+        "day-accent": "#a6e22e", // Monokai keyword green
+        "day-muted":  "#75715e", // Monokai comment brown
       },
     },
   },

@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 
 const BOOT_LINES = [
   { text: "> Booting portfolio v2.0...", delay: 350 },
+  { text: "> Loading color scheme: NotepadPlusPlus.xml     [OK]", delay: 500 },
   { text: "> Loading profile: Dylan Johnson", delay: 500 },
   { text: "> Importing skills: ML, AI, React, Python...    [OK]", delay: 600 },
-  { text: "> Fetching projects from github.com/Cuplan...   [OK]", delay: 700 },
-  { text: "> Connecting modules...", delay: 450 },
+  { text: "> Fetching projects from github.com/Cuplan...   [OK]", delay: 650 },
   { text: "> All systems operational.", delay: 400 },
 ];
 
