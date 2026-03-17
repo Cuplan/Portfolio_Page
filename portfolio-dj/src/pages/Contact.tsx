@@ -28,7 +28,7 @@ export default function Contact() {
     );
 
     // Crée la chaîne mailto avec sujet et corps
-    const mailtoLink = `mailto:dylan.johnson.dev@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:johnsondylan14@gmail.com?subject=${subject}&body=${body}`;
 
     // On redirige vers mailto: (ouvre le client mail)
     window.location.href = mailtoLink;
@@ -147,10 +147,10 @@ export default function Contact() {
                 className="text-emerald-700 dark:text-green-400 transition-colors duration-300"
               />{" "}
               <a
-                href="mailto:dylan.johnson.dev@gmail.com"
+                href="mailto:johnsondylan14@gmail.com"
                 className="hover:text-emerald-600 dark:hover:text-green-300 transition-colors duration-200"
               >
-                dylan.johnson.dev@gmail.com
+                johnsondylan14@gmail.com
               </a>
             </li>
             <li className="flex items-center gap-2 text-stone-700 dark:text-zinc-300 transition-colors duration-300">
@@ -158,10 +158,10 @@ export default function Contact() {
                 className="text-emerald-700 dark:text-green-400 transition-colors duration-300"
               />{" "}
               <a
-                href="tel:+15149465541"
+                href="tel:+18733070499"
                 className="hover:text-emerald-600 dark:hover:text-green-300 transition-colors duration-200"
               >
-                (514) 946-5541
+                (873) 307-0499
               </a>
             </li>
           </ul>
