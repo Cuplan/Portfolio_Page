@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { useLang } from "../hooks/useLang";
 import { TermWindow, Prompt } from "../components/TermWindow";
+import UptimeWidget from "../components/UptimeWidget";
 import {
   SiReact,
   SiMysql,
@@ -45,7 +46,9 @@ export default function Home() {
 
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-12 bg-day-bg dark:bg-dj-black transition-colors duration-300">
-      <div className="max-w-5xl w-full">
+      <div className="max-w-5xl w-full space-y-4">
+
+        {/* Main about terminal */}
         <TermWindow title="~/about -- zsh">
           <div className="p-6 flex flex-col md:flex-row gap-8">
 
@@ -73,7 +76,6 @@ export default function Home() {
             {/* CONTENT */}
             <div className="md:w-2/3 space-y-5">
 
-              {/* whoami */}
               <div>
                 <Prompt cmd="whoami" />
                 <h1 className="text-2xl font-bold text-zinc-100 dark:text-green-400 pl-5 leading-tight">
@@ -89,7 +91,6 @@ export default function Home() {
                 </h1>
               </div>
 
-              {/* bio */}
               <div>
                 <Prompt cmd="cat bio.txt" />
                 <p className="text-sm text-zinc-300 dark:text-zinc-300 leading-relaxed border-l-2 border-day-accent/20 dark:border-green-500/20 pl-3 ml-5">
@@ -97,7 +98,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* skills */}
               <div>
                 <Prompt cmd="ls skills/" />
                 <div className="flex flex-wrap gap-2 pl-5">
@@ -113,7 +113,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* experience */}
               <div>
                 <Prompt cmd="cat work-history.log" />
                 <ul className="space-y-1 pl-5">
@@ -128,7 +127,6 @@ export default function Home() {
                 </ul>
               </div>
 
-              {/* testimonials */}
               <div>
                 <Prompt cmd="tail -n 1 testimonials.log" />
                 <AnimatePresence mode="wait">
@@ -154,6 +152,10 @@ export default function Home() {
             </div>
           </div>
         </TermWindow>
+
+        {/* Uptime widget */}
+        <UptimeWidget />
+
       </div>
     </section>
   );

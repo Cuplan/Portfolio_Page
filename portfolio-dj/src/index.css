@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 /* Documentation personnelle: FAUSSE ERREURS! Tailwind va comprendre plus tard*/
+
+@keyframes crt-flicker {
+  0%,   88%, 90%, 92%, 96%, 100% { opacity: 1; }
+  89%,  91%                      { opacity: 0.96; }
+  93%                            { opacity: 0.98; }
+}

@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { useLang } from "../hooks/useLang";
 import { TermWindow, Prompt } from "../components/TermWindow";
-import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaPhone } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaPhone, FaCopy, FaCheck } from "react-icons/fa";
+
+interface ContactLink {
+  icon: React.ReactNode;
+  label: string;
+  href: string;
+  copyText?: string;
+}
 
 export default function Contact() {
   const { t } = useLang();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -22,10 +30,20 @@ export default function Contact() {
     window.location.href = `mailto:johnsondylan14@gmail.com?subject=${subject}&body=${body}`;
   }
 
+  async function copyToClipboard(text: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedKey(text);
+      setTimeout(() => setCopiedKey(null), 2000);
+    } catch {
+      // clipboard not available
+    }
+  }
+
   const inputBase =
     "w-full bg-transparent border-0 border-b border-zinc-600/40 dark:border-green-500/25 text-zinc-200 dark:text-green-300 text-sm px-2 py-1.5 placeholder-day-muted/60 dark:placeholder-green-600/25 focus:outline-none focus:border-day-accent dark:focus:border-green-400 transition-colors duration-200";
 
-  const contacts = [
+  const contacts: ContactLink[] = [
     {
       icon: <FaGithub />,
       label: "github.com/Cuplan",
@@ -40,11 +58,13 @@ export default function Contact() {
       icon: <FaEnvelope />,
       label: "johnsondylan14@gmail.com",
       href: "mailto:johnsondylan14@gmail.com",
+      copyText: "johnsondylan14@gmail.com",
     },
     {
       icon: <FaPhone />,
       label: "(873) 307-0499",
       href: "tel:+18733070499",
+      copyText: "(873) 307-0499",
     },
   ];
 
@@ -54,7 +74,6 @@ export default function Contact() {
         <TermWindow title="~/contact.sh">
           <div className="p-6 space-y-7">
 
-            {/* Header */}
             <div>
               <Prompt cmd="./contact.sh" />
               <p className="text-xs text-zinc-400 dark:text-zinc-500 pl-5">{t.contact.title}</p>
@@ -118,7 +137,7 @@ export default function Contact() {
             <div>
               <Prompt cmd="cat links.json" />
               <ul className="space-y-2 pl-5">
-                {contacts.map(({ icon, label, href }) => (
+                {contacts.map(({ icon, label, href, copyText }) => (
                   <li key={href} className="flex items-center gap-2 text-sm">
                     <span className="text-day-accent/50 dark:text-green-600/40 text-xs select-none">▸</span>
                     <span className="text-day-accent/70 dark:text-green-500/70 text-base">{icon}</span>
@@ -130,6 +149,22 @@ export default function Contact() {
                     >
                       {label}
                     </a>
+                    {copyText && (
+                      <button
+                        onClick={() => copyToClipboard(copyText)}
+                        className="ml-1 text-zinc-600 dark:text-zinc-700 hover:text-day-accent dark:hover:text-green-400 transition-colors flex items-center gap-1 text-xs"
+                        title={`Copy ${copyText}`}
+                      >
+                        {copiedKey === copyText ? (
+                          <>
+                            <FaCheck size={10} className="text-day-accent dark:text-green-400" />
+                            <span className="text-day-accent dark:text-green-400">[copied ✓]</span>
+                          </>
+                        ) : (
+                          <FaCopy size={10} />
+                        )}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
