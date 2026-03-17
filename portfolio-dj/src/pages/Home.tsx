@@ -3,23 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../hooks/useTheme";
 import { Typewriter } from "react-simple-typewriter";
 
-// On importe les icônes depuis react-icons/si (Simple Icons)
 import {
   SiReact,
-  SiTypescript,
-  SiTailwindcss,
-  SiHtml5,
-  SiCss3,
-  SiBootstrap,
   SiMysql,
   SiPython,
   SiPandas,
-  SiAdobeillustrator,
   SiJavascript,
-  SiFigma,
+  SiSharp,
 } from "react-icons/si";
-import { FaFileExcel } from "react-icons/fa";
-import { FaJava } from "react-icons/fa";
+import { FaFileExcel, FaJava, FaRobot } from "react-icons/fa";
 
 const temoignages = [
   {
@@ -118,88 +110,53 @@ export default function Home() {
               Compétences clés
             </h2>
             <ul className="grid grid-cols-2 gap-x-4 list-none text-stone-600 dark:text-zinc-300 text-sm">
-              {/* React + TypeScript + Tailwind */}
+              <li className="flex items-center gap-2 mb-2">
+                <SiPython className="w-5 h-5 text-yellow-400 dark:text-yellow-300" />
+                <span>Python</span>
+              </li>
+              <li className="flex items-center gap-2 mb-2">
+                <SiSharp className="w-5 h-5 text-violet-500 dark:text-violet-400" />
+                <span>C#</span>
+              </li>
+              <li className="flex items-center gap-2 mb-2">
+                <FaJava className="w-5 h-5 text-red-500 dark:text-red-400" />
+                <span>Java</span>
+              </li>
+              <li className="flex items-center gap-2 mb-2">
+                <SiMysql className="w-5 h-5 text-blue-500 dark:text-blue-400" />
+                <span>SQL</span>
+              </li>
               <li className="flex items-center gap-2 mb-2">
                 <SiReact className="w-5 h-5 text-emerald-400 dark:text-emerald-300" />
                 <span>React</span>
               </li>
               <li className="flex items-center gap-2 mb-2">
-                <SiTypescript className="w-5 h-5 text-sky-400 dark:text-sky-300" />
-                <span>TypeScript</span>
+                <SiJavascript className="w-5 h-5 text-yellow-400 dark:text-yellow-300" />
+                <span>JavaScript</span>
               </li>
-              <li className="flex items-center gap-2 mb-2">
-                <SiTailwindcss className="w-5 h-5 text-cyan-400 dark:text-cyan-300" />
-                <span>Tailwind CSS</span>
-              </li>
-
-              {/* JavaScript + HTML/CSS + Bootstrap */}
-              <li className="flex items-center gap-2 mb-2">
-                <SiHtml5 className="w-5 h-5 text-orange-500 dark:text-orange-300" />
-                <span>HTML5</span>
-              </li>
-              <li className="flex items-center gap-2 mb-2">
-                <SiCss3 className="w-5 h-5 text-blue-500 dark:text-blue-300" />
-                <span>CSS3</span>
-              </li>
-              <li className="flex items-center gap-2 mb-2">
-                <SiBootstrap className="w-5 h-5 text-violet-500 dark:text-violet-300" />
-                <span>Bootstrap</span>
-              </li>
-              <li className="flex items-center gap-2 mb-2">
-                <SiJavascript className="w-5 h-5 text-violet-500 dark:text-violet-300" />
-                <span className="font-semibold">JavaScript</span>
-              </li>
-
-              {/* Java, SQL, Python */}
-              <li className="flex items-center gap-2 mb-2">
-                <FaJava className="w-5 h-5 text-red-500 dark:text-red-300" />
-                <span>Java</span>
-              </li>
-              <li className="flex items-center gap-2 mb-2">
-                <SiMysql className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-                <span>SQL</span>
-              </li>
-              <li className="flex items-center gap-2 mb-2">
-                <SiPython className="w-5 h-5 text-yellow-400 dark:text-yellow-300" />
-                <span>Python</span>
-              </li>
-
-              {/* Machine Learning : Weka, pandas, scikit-learn */}
               <li className="flex items-center gap-2 mb-2 col-span-2">
-                <SiPandas className="w-5 h-5 text-yellow-400 dark:text-yellow-300" />
+                <SiPandas className="w-5 h-5 text-blue-400 dark:text-blue-300" />
                 <span>Machine Learning (Weka, pandas, scikit-learn)</span>
               </li>
-
-              {/* UI/UX + accessibilité */}
-              <li className="flex items-center gap-2 mb-2">
-                <SiFigma className="w-5 h-5 text-pink-400 dark:text-pink-300" />
-                <span>UI/UX</span>
+              <li className="flex items-center gap-2 mb-2 col-span-2">
+                <FaRobot className="w-5 h-5 text-emerald-500 dark:text-green-400" />
+                <span>Outils IA (Claude, ChatGPT, Cursor…)</span>
               </li>
               <li className="flex items-center gap-2 mb-2">
-                <SiAdobeillustrator className="w-5 h-5 text-orange-400 dark:text-orange-300" />
-                <span>Accessibilité</span>
-              </li>
-
-              {/* Excel & bases de données */}
-              <li className="flex items-center gap-2 mb-2">
-                <FaFileExcel className="w-5 h-5 text-green-500 dark:text-green-300" />
+                <FaFileExcel className="w-5 h-5 text-green-500 dark:text-green-400" />
                 <span>Excel & bases de données</span>
               </li>
-
-              {/* Gestion d'équipe & conflits */}
               <li className="flex items-center gap-2 mb-2">
                 <span className="w-5 h-5 flex items-center justify-center bg-emerald-100 dark:bg-zinc-800 rounded text-emerald-800 dark:text-green-400">
                   🤝
                 </span>
-                <span>Gestion d'équipe & conflits</span>
+                <span>Gestion d'équipe</span>
               </li>
-
-              {/* Soft skills : polyvalence, écoute, esprit d'équipe */}
-              <li className="flex items-center gap-2 mb-2">
+              <li className="flex items-center gap-2 mb-2 col-span-2">
                 <span className="w-5 h-5 flex items-center justify-center bg-emerald-100 dark:bg-zinc-800 rounded text-emerald-800 dark:text-green-400">
                   💡
                 </span>
-                <span>Soft skills : polyvalence, écoute, esprit d'équipe</span>
+                <span>Polyvalence, écoute, esprit d'équipe</span>
               </li>
             </ul>
           </div>
@@ -210,6 +167,7 @@ export default function Home() {
               Expériences pro
             </h2>
             <ul className="list-disc list-inside text-stone-600 dark:text-zinc-300 text-sm space-y-1">
+              <li>Transport Valois - Stage en informatique</li>
               <li>Bonbons Mélangés - Responsable IT et site web</li>
               <li>Cégep de Trois-Rivières - Tuteur en programmation</li>
               <li>PTW - Testeur de jeux vidéo</li>
