@@ -8,7 +8,7 @@ const fr = {
     contact: "Contact",
   },
   footer: {
-    madeWith: "Fait avec 💻 & ☕ par Dylan Johnson ©",
+    madeWith: "Fait par Dylan Johnson @",
   },
   home: {
     typewriterWords: ["Salut, moi c'est Dylan Johnson !", " Hi, I'm Dylan Johnson!"],
@@ -104,7 +104,7 @@ const en: typeof fr = {
     contact: "Contact",
   },
   footer: {
-    madeWith: "Made with 💻 & ☕ by Dylan Johnson ©",
+    madeWith: "Made by Dylan Johnson @",
   },
   home: {
     typewriterWords: ["Hi, I'm Dylan Johnson!", " Salut, c'est Dylan Johnson !"],

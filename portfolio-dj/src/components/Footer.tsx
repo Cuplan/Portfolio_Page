@@ -11,7 +11,7 @@ export default function Footer() {
           <span className="text-day-accent dark:text-green-500 mr-1.5 select-none">$</span>
           echo &quot;{t.footer.madeWith} {new Date().getFullYear()}&quot;
           <span className="text-day-muted dark:text-zinc-700 ml-2 select-none">
-            {/* clin d'œil 🖊️ */}# NotepadPlusPlus.xml
+            {/* clin d'oeil */}# NotepadPlusPlus.xml
           </span>
         </p>
 

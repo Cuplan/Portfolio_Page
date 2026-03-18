@@ -27,9 +27,11 @@ const WELCOME: HistoryEntry = {
 interface Props {
   isOpen: boolean;
   onClose: () => void;
+  onDropDB: () => void;
+  onCrash: () => void;
 }
 
-export default function InteractiveTerminal({ isOpen, onClose }: Props) {
+export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash }: Props) {
   const { t } = useLang();
   const { toggleCRT } = useCRT();
   const navigate = useNavigate();
@@ -238,15 +240,53 @@ export default function InteractiveTerminal({ isOpen, onClose }: Props) {
           output = { type: "error", lines: ["Permission denied. Nice try."] };
           break;
 
-        case cmd === "rm -rf /" || cmd === "rm -rf":
-          output = {
-            type: "error",
-            lines: [
-              "rm: cannot remove '/portfolio': Operation not permitted",
-              "Your attempt has been noted. Just kidding.",
-            ],
-          };
-          break;
+        case cmd === "drop database portfolio;" || cmd === "drop database portfolio":
+          setHistory((prev) => [
+            ...prev,
+            inputEntry,
+            {
+              type: "output",
+              lines: [
+                "psql (14.2)  —  connected to: portfolio",
+                "DROP DATABASE portfolio;",
+                "> Dropping indexes...                [OK]",
+                "> DELETE FROM projects;              (4 rows deleted)",
+                "> DELETE FROM skills;                (11 rows deleted)",
+                "> DELETE FROM testimonials;          (3 rows deleted)",
+                "> DROP TABLE experiences;            [OK]",
+                '> Database "portfolio" dropped successfully.',
+                "Connection terminated.",
+              ],
+            },
+          ]);
+          setInput("");
+          setTimeout(() => { onClose(); onDropDB(); }, 1200);
+          return;
+
+        case cmd === "rm -rf /" ||
+          cmd === "rm -rf /*" ||
+          cmd === "rm -rf" ||
+          cmd === ":(){ :|:& };:" ||
+          cmd.startsWith("del /f") ||
+          cmd.startsWith("format c"):
+          setHistory((prev) => [
+            ...prev,
+            inputEntry,
+            {
+              type: "error",
+              lines: [
+                "rm: removing '/home/dylan-johnson/portfolio/node_modules'...",
+                "rm: removing '/home/dylan-johnson/portfolio/src'...",
+                "rm: removing '/usr/lib/react'...",
+                "rm: removing '/usr/bin/node'...",
+                "Segmentation fault (core dumped)",
+                "kill: sending signal to process group failed",
+              ],
+            },
+          ]);
+          setInput("");
+          setTimeout(() => { onClose(); onCrash(); }, 1000);
+          return;
 
         case cmd === "exit" || cmd === "quit":
           onClose();
@@ -265,7 +305,7 @@ export default function InteractiveTerminal({ isOpen, onClose }: Props) {
       setHistory((prev) => [...prev, inputEntry, output]);
       setInput("");
     },
-    [t, navigate, toggleCRT, onClose]
+    [t, navigate, toggleCRT, onClose, onDropDB, onCrash]
   );
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
