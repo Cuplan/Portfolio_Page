@@ -23,12 +23,12 @@ const fr = {
     },
     experienceTitle: "Expériences pro",
     experiences: [
-      "Transport Valois — Stage en informatique",
-      "Bonbons Mélangés — Responsable IT et site web",
-      "Cégep de Trois-Rivières — Tuteur en programmation",
-      "PTW — Testeur de jeux vidéo",
-      "Ville de Montréal — Col blanc",
-      "Bénévolat — Galerie d'art du Parc",
+      "Transport Valois, stage en informatique",
+      "Bonbons Mélangés, responsable IT et site web",
+      "Cégep de Trois-Rivières, tuteur en programmation",
+      "PTW, testeur de jeux vidéo",
+      "Ville de Montréal, col blanc",
+      "Bénévolat, Galerie d'art du Parc",
     ],
     testimonialsTitle: "Ce qu'on dit de moi",
     testimonials: [
@@ -54,7 +54,7 @@ const fr = {
   },
   projects: {
     title: "Mes projets",
-    subtitle: "Un aperçu de ce que j'ai construit — cliquez pour voir le code.",
+    subtitle: "Un aperçu de ce que j'ai construit. Cliquez pour voir le code.",
     viewCode: "Voir le code",
     items: [
       {
@@ -77,7 +77,7 @@ const fr = {
       },
       {
         title: "Gestionnaire de mots de passe (Python)",
-        description: "Connexions, base d'utilisateurs, génération de MDP, stockage sécurisé. Ttkinter. — EN CONSTRUCTION",
+        description: "Connexions, base d'utilisateurs, génération de MDP, stockage sécurisé. Ttkinter. [WIP]",
         repoUrl: "https://github.com/Cuplan/Mdp_Gestionnaire.git",
         image: "gestionmdp.jpg",
       },
@@ -119,12 +119,12 @@ const en: typeof fr = {
     },
     experienceTitle: "Work Experience",
     experiences: [
-      "Transport Valois — IT Internship",
-      "Bonbons Mélangés — IT & Web Manager",
-      "Cégep de Trois-Rivières — Programming Tutor",
-      "PTW — Video Game Tester",
-      "Ville de Montréal — White Collar Worker",
-      "Volunteer — Galerie d'art du Parc",
+      "Transport Valois, IT Internship",
+      "Bonbons Mélangés, IT & Web Manager",
+      "Cégep de Trois-Rivières, Programming Tutor",
+      "PTW, Video Game Tester",
+      "Ville de Montréal, White Collar Worker",
+      "Volunteer @ Galerie d'art du Parc",
     ],
     testimonialsTitle: "What people say",
     testimonials: [
@@ -150,7 +150,7 @@ const en: typeof fr = {
   },
   projects: {
     title: "My Projects",
-    subtitle: "A look at what I've built — click to see the code.",
+    subtitle: "A look at what I've built. Click to see the code.",
     viewCode: "View code",
     items: [
       {
@@ -173,7 +173,7 @@ const en: typeof fr = {
       },
       {
         title: "Password Manager (Python)",
-        description: "User login, database, password generation, secure storage. Ttkinter. — WORK IN PROGRESS",
+        description: "User login, database, password generation, secure storage. Ttkinter. [WIP]",
         repoUrl: "https://github.com/Cuplan/Mdp_Gestionnaire.git",
         image: "gestionmdp.jpg",
       },
