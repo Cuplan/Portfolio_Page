@@ -14,7 +14,7 @@ export default function NotFound() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-day-bg dark:bg-dj-black px-4">
       <div className="max-w-lg w-full">
-        <TermWindow title="~/error — bash">
+        <TermWindow title="~/error.sh">
           <div className="p-6 space-y-5 font-mono">
 
             <div className="text-sm space-y-1">
@@ -42,7 +42,7 @@ export default function NotFound() {
                         {cmd}
                       </span>
                       <span className="text-day-muted dark:text-zinc-600 text-xs">
-                        — {label}
+                        # {label}
                       </span>
                     </button>
                   </li>

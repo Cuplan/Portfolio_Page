@@ -71,7 +71,7 @@ function AppInner() {
       {dbDropped && (
         <div className="fixed inset-0 z-[300] bg-day-bg dark:bg-dj-black font-mono flex items-center justify-center p-8">
           <div className="max-w-xl w-full space-y-1 text-xs">
-            <p className="text-red-500 font-bold text-sm mb-4">500 — Internal Server Error</p>
+            <p className="text-red-500 font-bold text-sm mb-4">500: Internal Server Error</p>
             <p className="text-zinc-600">────────────────────────────────────────</p>
             <p className="text-red-400">GET /api/portfolio/data</p>
             <p className="text-red-400">TypeError: Failed to fetch</p>
@@ -98,7 +98,7 @@ function AppInner() {
         <div className="fixed inset-0 z-[300] bg-black font-mono flex items-center justify-center p-8">
           <div className="max-w-3xl w-full space-y-0.5 text-xs">
             <p className="text-white">[    0.000000] Linux version 6.1.0-portfolio (dylan@portfolio)</p>
-            <p className="text-red-500">[    0.000137] KERNEL PANIC — not syncing: system ran out of memory</p>
+            <p className="text-red-500">[    0.000137] KERNEL PANIC: not syncing: system ran out of memory</p>
             <p className="text-zinc-400">[    0.000201] CPU: 0 PID: 31337 Comm: node Not tainted</p>
             <p className="text-zinc-400">[    0.000215] rm: removed &apos;/home/dylan-johnson/portfolio&apos;</p>
             <p className="text-zinc-400">[    0.000219] rm: removed &apos;/usr/lib/node_modules/react&apos;</p>
@@ -106,7 +106,7 @@ function AppInner() {
             <p className="text-red-400">[    0.000230] Oops: general protection fault</p>
             <p className="text-red-400">[    0.000245] Out of memory: kill process 31337 (node) score 9001</p>
             <p className="text-red-400">[    0.000259] Killed process 31337 (node) total-vm:1048576kB</p>
-            <p className="text-zinc-500">[    0.000260] ---[ end Kernel panic — not syncing ]---</p>
+            <p className="text-zinc-500">[    0.000260] ---[ end Kernel panic: not syncing ]---</p>
             <p className="text-zinc-600 pt-6 animate-pulse">Refresh to reboot.</p>
           </div>
         </div>

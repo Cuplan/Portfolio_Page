@@ -56,7 +56,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
             <span className="text-day-accent dark:text-green-500 ml-0.5 select-none">$</span>
           </Link>
 
-          {/* Desktop nav links + GitHub — hidden on mobile */}
+          {/* Desktop nav links + GitHub -hidden on mobile */}
           <div className="hidden md:flex items-center gap-1">
             {links.map(({ to, label }) => navLink(to, label))}
             <a
@@ -70,7 +70,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
             </a>
           </div>
 
-          {/* Utility buttons — always visible, never affected by lang toggle */}
+          {/* Utility buttons -always visible, never affected by lang toggle */}
           <div className="flex items-center gap-1">
             <button
               onClick={onOpenTerminal}

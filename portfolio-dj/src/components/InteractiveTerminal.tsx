@@ -95,7 +95,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "▸ crt            # toggle CRT effect",
               "▸ clear          # clear terminal",
               "",
-              "⚠  WARNING — do NOT run the following:",
+              "⚠  WARNING: do NOT run the following:",
               "   rm -rf /   DROP DATABASE portfolio;   :(){ :|:& };:",
               "   (we are not responsible for any consequences)",
             ],
@@ -180,7 +180,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
             type: "output",
             lines: [
               "NAME",
-              "    dylan-johnson — CS student, developer",
+              "    dylan-johnson, CS student & developer",
               "",
               "SYNOPSIS",
               "    dylan [--hire] [--contact] [--collaborate]",
@@ -251,7 +251,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
             {
               type: "output",
               lines: [
-                "psql (14.2)  —  connected to: portfolio",
+                "psql (14.2)  connected to: portfolio",
                 "DROP DATABASE portfolio;",
                 "> Dropping indexes...                [OK]",
                 "> DELETE FROM projects;              (4 rows deleted)",
@@ -351,7 +351,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
             <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
             <div className="w-3 h-3 rounded-full bg-green-400/80" />
             <span className="ml-2 text-zinc-400/60 dark:text-green-500/40 text-xs">
-              ~/dylan-johnson — interactive
+              ~/dylan-johnson :: interactive
             </span>
           </div>
           <button

@@ -51,7 +51,7 @@ export default function Contact() {
     },
     {
       icon: <FaLinkedin />,
-      label: "linkedin — dylan-johnson-447681280",
+      label: "linkedin.com/in/dylan-johnson-447681280",
       href: "https://www.linkedin.com/in/dylan-johnson-447681280/",
     },
     {

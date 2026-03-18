@@ -19,7 +19,7 @@ export default function UptimeWidget() {
         <Prompt cmd="uptime" />
         <div className="pl-5 space-y-3">
           <p className="text-xs text-day-muted dark:text-zinc-600 select-none">
-            {hh}:{mm}:{ss} up 22 years — load average: 0.42, 0.38, 0.31
+            {hh}:{mm}:{ss} up 22 years  |  load avg: 0.42, 0.38, 0.31
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-1.5 text-xs">
