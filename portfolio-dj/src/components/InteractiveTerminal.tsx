@@ -128,7 +128,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
             lines: [
               "Dylan Johnson",
               `role:   ${t.home.typewriterWords[0]}`,
-              "age:    22",
+              "age:    28",
               "lang:   FR / EN",
             ],
           };
@@ -186,7 +186,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "     ████░░░░░░████       OS:       Portfolio v2.0",
               "    ████░░░░░░░░████      Shell:    zsh + React",
               "     ████░░░░░░████       Stack:    React · Python · Java",
-              "      ████░░░░████        Age:      22",
+              "      ████░░░░████        Age:      28",
               "       ██████████         Status:   ● open to work",
               "                          Location: Québec, CA",
               "                          Coffee:   ████████░░ 80%",
@@ -421,7 +421,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm font-mono"
+      className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center bg-black/60 backdrop-blur-sm font-mono pt-4 sm:pt-0"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className="w-full max-w-2xl mx-3 shadow-2xl shadow-green-500/10">
@@ -446,7 +446,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
         {/* Body */}
         <div
           ref={scrollRef}
-          className="bg-day-card dark:bg-black border border-zinc-600/40 dark:border-green-500/30 border-t-0 h-64 sm:h-80 overflow-y-auto p-4 space-y-0.5 cursor-text"
+          className="bg-day-card dark:bg-black border border-zinc-600/40 dark:border-green-500/30 border-t-0 h-[38svh] sm:h-80 overflow-y-auto p-4 space-y-0.5 cursor-text"
           onClick={() => inputRef.current?.focus()}
         >
           {history.map((entry, i) => (
@@ -484,6 +484,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
+              onFocus={() => setTimeout(() => { if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight; }, 300)}
               className="flex-1 bg-transparent text-zinc-100 dark:text-zinc-100 text-xs focus:outline-none caret-day-accent dark:caret-green-400"
               autoComplete="off"
               autoCapitalize="off"
