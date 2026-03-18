@@ -1,4 +1,5 @@
 import { useState, useEffect, type ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home";
@@ -166,6 +167,7 @@ function App() {
     <CRTProvider>
       <LangProvider>
         <AppInner />
+        <SpeedInsights />
       </LangProvider>
     </CRTProvider>
   );
