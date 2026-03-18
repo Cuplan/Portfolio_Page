@@ -94,6 +94,10 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "▸ cd ./contact   — go to contact",
               "▸ crt            — toggle CRT effect",
               "▸ clear          — clear terminal",
+              "",
+              "⚠  WARNING — do NOT run the following:",
+              "   rm -rf /   DROP DATABASE portfolio;   :(){ :|:& };:",
+              "   (we are not responsible for any consequences)",
             ],
           };
           break;
@@ -339,7 +343,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm font-mono"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="w-full max-w-2xl mx-4 shadow-2xl shadow-green-500/10">
+      <div className="w-full max-w-2xl mx-3 shadow-2xl shadow-green-500/10">
         {/* Title bar */}
         <div className="bg-day-nav dark:bg-zinc-900 border border-zinc-600/40 dark:border-green-500/30 border-b-0 px-4 py-2 flex items-center justify-between select-none">
           <div className="flex items-center gap-2">
@@ -361,7 +365,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
         {/* Body */}
         <div
           ref={scrollRef}
-          className="bg-day-card dark:bg-black border border-zinc-600/40 dark:border-green-500/30 border-t-0 h-80 overflow-y-auto p-4 space-y-0.5 cursor-text"
+          className="bg-day-card dark:bg-black border border-zinc-600/40 dark:border-green-500/30 border-t-0 h-64 sm:h-80 overflow-y-auto p-4 space-y-0.5 cursor-text"
           onClick={() => inputRef.current?.focus()}
         >
           {history.map((entry, i) => (

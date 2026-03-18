@@ -72,7 +72,7 @@ export default function Contact() {
     <section className="min-h-screen bg-day-bg dark:bg-dj-black transition-colors duration-300">
       <div className="max-w-2xl mx-auto px-4 py-10">
         <TermWindow title="~/contact.sh">
-          <div className="p-6 space-y-7">
+          <div className="p-4 sm:p-6 space-y-7">
 
             <div>
               <Prompt cmd="./contact.sh" />

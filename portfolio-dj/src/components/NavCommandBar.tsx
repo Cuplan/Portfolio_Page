@@ -33,7 +33,7 @@ export default function NavCommandBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           transition={{ duration: 0.15 }}
-          className="fixed top-[48px] left-0 right-0 z-50 flex justify-center pointer-events-none"
+          className="fixed top-[44px] left-0 right-0 z-50 hidden md:flex justify-center pointer-events-none"
         >
           <div className="bg-day-nav/95 dark:bg-zinc-900/95 border border-zinc-600/40 dark:border-green-500/20 text-xs font-mono px-4 py-1 flex items-center gap-2 shadow-lg backdrop-blur-sm">
             <span className="text-day-accent dark:text-green-500 select-none">$</span>

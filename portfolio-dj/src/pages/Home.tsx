@@ -50,7 +50,7 @@ export default function Home() {
 
         {/* Main about terminal */}
         <TermWindow title="~/about -- zsh">
-          <div className="p-6 flex flex-col md:flex-row gap-8">
+          <div className="p-4 sm:p-6 flex flex-col md:flex-row gap-6 md:gap-8">
 
             {/* PHOTO */}
             <div className="md:w-1/3 flex flex-col items-center gap-2 shrink-0">
@@ -65,7 +65,7 @@ export default function Home() {
                 <img
                   src="/ma-photo.jpg"
                   alt="Dylan Johnson"
-                  className="w-52 h-52 md:w-full md:h-auto aspect-square object-cover"
+                  className="w-36 h-36 sm:w-52 sm:h-52 md:w-full md:h-auto aspect-square object-cover"
                 />
               </motion.div>
               <p className="text-xs text-day-muted/70 dark:text-green-600/25 select-none">
