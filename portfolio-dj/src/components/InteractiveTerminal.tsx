@@ -11,8 +11,8 @@ interface HistoryEntry {
 
 const AVAILABLE_COMMANDS = [
   "help", "whoami", "skills", "ls", "ls projects/",
-  "cat bio.txt", "contact", "neofetch", "man dylan",
-  "crt", "clear", "pwd", "date",
+  "cat bio.txt", "cat resume.txt", "contact", "neofetch", "man dylan",
+  "git log", "crt", "clear", "pwd", "date",
   "cd ~", "cd ./projects", "cd ./contact",
 ];
 
@@ -29,9 +29,10 @@ interface Props {
   onClose: () => void;
   onDropDB: () => void;
   onCrash: () => void;
+  konamiCount: number;
 }
 
-export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash }: Props) {
+export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash, konamiCount }: Props) {
   const { t } = useLang();
   const { toggleCRT } = useCRT();
   const navigate = useNavigate();
@@ -54,6 +55,23 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
     if (scrollRef.current)
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [history]);
+
+  // Konami code easter egg
+  useEffect(() => {
+    if (konamiCount === 0) return;
+    setHistory((prev) => [
+      ...prev,
+      {
+        type: "output",
+        lines: [
+          "> konami code detected",
+          "> activating cheat mode...",
+          "> ERROR: cheat mode unavailable",
+          "> achievement unlocked: retro gamer",
+        ],
+      },
+    ]);
+  }, [konamiCount]);
 
   const execCommand = useCallback(
     (raw: string) => {
@@ -92,6 +110,8 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "▸ cd ~           # go home",
               "▸ cd ./projects  # go to projects",
               "▸ cd ./contact   # go to contact",
+              "▸ git log        # commit history",
+              "▸ cat resume.txt # view resume",
               "▸ crt            # toggle CRT effect",
               "▸ clear          # clear terminal",
               "",
@@ -234,6 +254,67 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
           navigate("/contact");
           onClose();
           return;
+
+        case cmd === "git log" || cmd === "git log --oneline":
+          output = {
+            type: "output",
+            lines: [
+              "commit d4f2b8a (HEAD -> main, origin/main)",
+              "Author: Dylan Johnson <johnsondylan14@gmail.com>",
+              `Date:   ${new Date().toDateString()}`,
+              "",
+              "    feat: add konami code easter egg",
+              "",
+              "commit a1c3e9f",
+              "Author: Dylan Johnson <johnsondylan14@gmail.com>",
+              "Date:   Mon Mar 17 2026",
+              "",
+              "    fix: mobile responsive layout",
+              "",
+              "commit 7b2d4c1",
+              "Author: Dylan Johnson <johnsondylan14@gmail.com>",
+              "Date:   Sun Mar 16 2026",
+              "",
+              "    feat: interactive terminal v2 + CRT overlay",
+              "",
+              "commit 3f8e2a9",
+              "Author: Dylan Johnson <johnsondylan14@gmail.com>",
+              "Date:   Fri Mar 14 2026",
+              "",
+              "    chore: initial portfolio setup",
+            ],
+          };
+          break;
+
+        case cmd === "cat resume.txt":
+          output = {
+            type: "output",
+            lines: [
+              "NAME",
+              "    Dylan Johnson",
+              "",
+              "EDUCATION",
+              "    DEC - Computer Science",
+              "    Cégep de Trois-Rivières  (2023-2026)",
+              "",
+              "EXPERIENCE",
+              "    Transport Valois          IT Internship",
+              "    Bonbons Mélangés          IT & Web Manager",
+              "    Cégep de Trois-Rivières   Programming Tutor",
+              "    PTW                       Video Game Tester",
+              "",
+              "SKILLS",
+              "    Languages:   Python, Java, C#, JavaScript, SQL",
+              "    Frameworks:  React, pandas, scikit-learn",
+              "    Tools:       Claude, ChatGPT, Git, Excel",
+              "",
+              "CONTACT",
+              "    johnsondylan14@gmail.com",
+              "    github.com/Cuplan",
+              "    linkedin.com/in/dylan-johnson-447681280",
+            ],
+          };
+          break;
 
         case cmd === "crt":
           toggleCRT();

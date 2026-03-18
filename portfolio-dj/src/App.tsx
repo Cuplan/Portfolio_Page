@@ -1,5 +1,6 @@
-import { useState, useEffect, type ReactNode } from "react";
+import { useState, useEffect, useRef, type ReactNode } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home";
@@ -40,17 +41,27 @@ function AppInner() {
   const [terminalOpen, setTerminalOpen] = useState(false);
   const [dbDropped, setDbDropped] = useState(false);
   const [crashed, setCrashed] = useState(false);
+  const [konamiCount, setKonamiCount] = useState(0);
+  const konamiRef = useRef<string[]>([]);
 
   const handleEnter = () => {
     sessionStorage.setItem(SESSION_KEY, "1");
     setShowIntro(false);
   };
 
-  // ` backtick toggles the floating terminal
+  // Backtick toggles terminal + Konami code detection
   useEffect(() => {
+    const KONAMI = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
     const handler = (e: KeyboardEvent) => {
       if (e.key === "`" && !showIntro) {
         setTerminalOpen((prev) => !prev);
+        return;
+      }
+      konamiRef.current = [...konamiRef.current, e.key].slice(-KONAMI.length);
+      if (konamiRef.current.join(",") === KONAMI.join(",")) {
+        konamiRef.current = [];
+        setTerminalOpen(true);
+        setKonamiCount((c) => c + 1);
       }
     };
     window.addEventListener("keydown", handler);
@@ -66,6 +77,7 @@ function AppInner() {
         onClose={() => setTerminalOpen(false)}
         onDropDB={() => setDbDropped(true)}
         onCrash={() => setCrashed(true)}
+        konamiCount={konamiCount}
       />
 
       {/* Easter egg: DROP DATABASE portfolio; */}
@@ -168,6 +180,7 @@ function App() {
       <LangProvider>
         <AppInner />
         <SpeedInsights />
+        <Analytics />
       </LangProvider>
     </CRTProvider>
   );
