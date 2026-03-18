@@ -200,7 +200,7 @@ export default function InteractiveTerminal({ isOpen, onClose }: Props) {
           break;
 
         case cmd.startsWith("echo "):
-          output = { type: "output", lines: [raw.slice(5)] };
+          output = { type: "output", lines: [raw.trim().slice(5)] };
           break;
 
         case cmd === "cd ~" || cmd === "cd /" || cmd === "cd":

@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { useTheme } from "./hooks/useTheme";
 import { LangProvider } from "./hooks/useLang";
 import { CRTProvider, useCRT } from "./hooks/useCRT";
 import { TerminalIntro } from "./components/TerminalIntro";
@@ -31,7 +30,6 @@ function PageTransition({ children }: { children: ReactNode }) {
 }
 
 function AppInner() {
-  useTheme();
   const { crtEnabled } = useCRT();
   const location = useLocation();
 

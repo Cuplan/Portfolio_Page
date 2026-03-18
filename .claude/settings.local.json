@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find c:ReposPortfolio_Pageportfolio-dj/src -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.css -o -name *.scss -o -name *.json \\\\\\))"
+      "Bash(find c:ReposPortfolio_Pageportfolio-dj/src -type f \\\\\\(-name *.tsx -o -name *.ts -o -name *.css -o -name *.scss -o -name *.json \\\\\\))",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)"
     ]
   }
 }
