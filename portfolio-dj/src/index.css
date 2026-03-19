@@ -3,6 +3,9 @@
 @tailwind utilities;
 /* Documentation personnelle: FAUSSE ERREURS! Tailwind va comprendre plus tard*/
 
+.terminal-body::-webkit-scrollbar { display: none; }
+.terminal-body { scrollbar-width: none; -ms-overflow-style: none; }
+
 @keyframes crt-flicker {
   0%,   88%, 90%, 92%, 96%, 100% { opacity: 1; }
   89%,  91%                      { opacity: 0.96; }

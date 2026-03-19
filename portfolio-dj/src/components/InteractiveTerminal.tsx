@@ -446,7 +446,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
         {/* Body */}
         <div
           ref={scrollRef}
-          className="bg-day-card dark:bg-black border border-zinc-600/40 dark:border-green-500/30 border-t-0 h-[38svh] sm:h-80 overflow-y-auto p-4 space-y-0.5 cursor-text"
+          className="terminal-body bg-day-card dark:bg-black border border-zinc-600/40 dark:border-green-500/30 border-t-0 h-[38svh] sm:h-80 overflow-y-auto p-4 space-y-0.5 cursor-text"
           onClick={() => inputRef.current?.focus()}
         >
           {history.map((entry, i) => (
