@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLang } from "../hooks/useLang";
 import { TermWindow, Prompt } from "../components/TermWindow";
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload, FaPhone, FaCopy, FaCheck } from "react-icons/fa";
+import { CONTACT } from "../constants/contact";
 
 interface ContactLink {
   icon: React.ReactNode;
@@ -27,7 +28,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Nom : ${name}\nCourriel : ${email}\n\nMessage :\n${message}`
     );
-    window.location.href = `mailto:johnsondylan14@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
   }
 
   async function copyToClipboard(text: string) {
@@ -46,25 +47,25 @@ export default function Contact() {
   const contacts: ContactLink[] = [
     {
       icon: <FaGithub />,
-      label: "github.com/Cuplan",
-      href: "https://github.com/Cuplan",
+      label: CONTACT.github.short,
+      href: CONTACT.github.url,
     },
     {
       icon: <FaLinkedin />,
-      label: "linkedin.com/in/dylan-johnson-447681280",
-      href: "https://www.linkedin.com/in/dylan-johnson-447681280/",
+      label: CONTACT.linkedin.short,
+      href: CONTACT.linkedin.url,
     },
     {
       icon: <FaEnvelope />,
-      label: "johnsondylan14@gmail.com",
-      href: "mailto:johnsondylan14@gmail.com",
-      copyText: "johnsondylan14@gmail.com",
+      label: CONTACT.email,
+      href: `mailto:${CONTACT.email}`,
+      copyText: CONTACT.email,
     },
     {
       icon: <FaPhone />,
-      label: "(873) 307-0499",
+      label: CONTACT.phone,
       href: "tel:+18733070499",
-      copyText: "(873) 307-0499",
+      copyText: CONTACT.phone,
     },
   ];
 

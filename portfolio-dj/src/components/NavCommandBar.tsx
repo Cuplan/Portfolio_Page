@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { ROUTES } from "../constants/routes";
 
-const PATH_COMMANDS: Record<string, string> = {
-  "/": "cd ~",
-  "/projets": "cd ./projects",
-  "/contact": "cd ./contact",
-};
+const PATH_COMMANDS: Record<string, string> = Object.fromEntries(
+  ROUTES.map((r) => [r.path, r.cmd])
+);
 
 export default function NavCommandBar() {
   const location = useLocation();

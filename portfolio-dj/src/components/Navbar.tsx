@@ -3,6 +3,7 @@ import { FaGithub, FaSun, FaMoon } from "react-icons/fa";
 import { useTheme } from "../hooks/useTheme";
 import { useLang } from "../hooks/useLang";
 import { useCRT } from "../hooks/useCRT";
+import { CONTACT } from "../constants/contact";
 
 interface NavbarProps {
   onOpenTerminal: () => void;
@@ -60,7 +61,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
           <div className="hidden md:flex items-center gap-1">
             {links.map(({ to, label }) => navLink(to, label))}
             <a
-              href="https://github.com/Cuplan"
+              href={CONTACT.github.url}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1 text-zinc-400 dark:text-green-400 hover:bg-zinc-700/40 dark:hover:bg-green-400/10 transition-colors duration-150"
@@ -113,7 +114,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
         <div className="flex md:hidden items-center gap-1 pb-2 overflow-x-auto">
           {links.map(({ to, label }) => navLink(to, label))}
           <a
-            href="https://github.com/Cuplan"
+            href={CONTACT.github.url}
             target="_blank"
             rel="noopener noreferrer"
             className="px-3 py-1 text-zinc-400 dark:text-green-400 hover:bg-zinc-700/40 dark:hover:bg-green-400/10 transition-colors duration-150 shrink-0"

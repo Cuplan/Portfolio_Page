@@ -1,11 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { TermWindow } from "../components/TermWindow";
-
-const NAV_LINKS = [
-  { cmd: "cd ~",          label: "home",     path: "/" },
-  { cmd: "cd ./projects", label: "projects", path: "/projets" },
-  { cmd: "cd ./contact",  label: "contact",  path: "/contact" },
-];
+import { ROUTES } from "../constants/routes";
 
 export default function NotFound() {
   const navigate = useNavigate();
@@ -31,7 +26,7 @@ export default function NotFound() {
                 did you mean one of these?
               </p>
               <ul className="space-y-2">
-                {NAV_LINKS.map(({ cmd, label, path }) => (
+                {ROUTES.map(({ cmd, label, path }) => (
                   <li key={path}>
                     <button
                       onClick={() => navigate(path)}

@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { useLang } from "../hooks/useLang";
+import { CONTACT } from "../constants/contact";
 
 export default function Footer() {
   const { t } = useLang();
@@ -17,7 +18,7 @@ export default function Footer() {
 
         <div className="flex space-x-4 text-base">
           <a
-            href="https://github.com/Cuplan"
+            href={CONTACT.github.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-500 dark:text-green-600/40 hover:text-zinc-200 dark:hover:text-green-400 transition-colors"
@@ -25,7 +26,7 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com/in/dylan-johnson-447681280/"
+            href={CONTACT.linkedin.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-500 dark:text-green-600/40 hover:text-zinc-200 dark:hover:text-green-400 transition-colors"
@@ -33,7 +34,7 @@ export default function Footer() {
             <FaLinkedin />
           </a>
           <a
-            href="mailto:johnsondylan14@gmail.com"
+            href={`mailto:${CONTACT.email}`}
             className="text-zinc-500 dark:text-green-600/40 hover:text-zinc-200 dark:hover:text-green-400 transition-colors"
           >
             <FaEnvelope />

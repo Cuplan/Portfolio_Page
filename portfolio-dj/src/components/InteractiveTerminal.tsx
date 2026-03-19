@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import { useLang } from "../hooks/useLang";
 import { useCRT } from "../hooks/useCRT";
+import { CONTACT } from "../constants/contact";
 
 interface HistoryEntry {
   type: "input" | "output" | "error";
@@ -169,10 +170,10 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
           output = {
             type: "output",
             lines: [
-              "GitHub:   github.com/Cuplan",
-              "LinkedIn: linkedin.com/in/dylan-johnson-447681280",
-              "Email:    johnsondylan14@gmail.com",
-              "Phone:    (873) 307-0499",
+              `GitHub:   ${CONTACT.github.short}`,
+              `LinkedIn: ${CONTACT.linkedin.short}`,
+              `Email:    ${CONTACT.email}`,
+              `Phone:    ${CONTACT.phone}`,
             ],
           };
           break;
@@ -212,7 +213,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "",
               "BUGS",
               "    Occasionally drinks too much coffee.",
-              "    Report issues to: johnsondylan14@gmail.com",
+              `    Report issues to: ${CONTACT.email}`,
             ],
           };
           break;
@@ -309,9 +310,9 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "    Tools:       Claude, ChatGPT, Git, Excel",
               "",
               "CONTACT",
-              "    johnsondylan14@gmail.com",
-              "    github.com/Cuplan",
-              "    linkedin.com/in/dylan-johnson-447681280",
+              `    ${CONTACT.email}`,
+              `    ${CONTACT.github.short}`,
+              `    ${CONTACT.linkedin.short}`,
             ],
           };
           break;
