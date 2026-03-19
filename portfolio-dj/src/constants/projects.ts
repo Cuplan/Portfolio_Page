@@ -1,12 +1,20 @@
 interface ProjectMeta {
   tech: string[];
-  bullets: string[];
+  fr: string[];
+  en: string[];
 }
 
 export const PROJECT_DETAILS: Record<string, ProjectMeta> = {
   "ml-weka": {
     tech: ["Java 21", "Weka", "Maven", "Machine Learning"],
-    bullets: [
+    fr: [
+      "Charge et prétraite des fichiers de données .arff",
+      "Entraîne un modèle RandomForest sur le dataset UCI Zoo",
+      "Sauvegarde et réutilise le modèle entraîné",
+      "Console interactive pour classifier des animaux en temps réel",
+      "Affiche les statistiques et métriques de performance du modèle",
+    ],
+    en: [
       "Loads and preprocesses .arff dataset files",
       "Trains a RandomForest model on the UCI Zoo dataset",
       "Saves and reuses the trained model for future predictions",
@@ -16,7 +24,14 @@ export const PROJECT_DETAILS: Record<string, ProjectMeta> = {
   },
   "naruto-api": {
     tech: ["React", "JavaScript", "CSS"],
-    bullets: [
+    fr: [
+      "Consomme l'API REST Naruto dattebayo",
+      "Layout responsive avec navigation personnalisée",
+      "Modales et validation de formulaires côté client",
+      "Structuré en composants réutilisables",
+      "Premier vrai projet React + JavaScript",
+    ],
+    en: [
       "Consumes the dattebayo Naruto REST API",
       "Responsive layout with custom navigation",
       "Modals and client-side form validation",
@@ -26,27 +41,48 @@ export const PROJECT_DETAILS: Record<string, ProjectMeta> = {
   },
   "basketball-java": {
     tech: ["Java", "OOP", "Java Swing"],
-    bullets: [
+    fr: [
+      "Architecture trois classes : Player, Team, Main",
+      "Encapsulation avec constructeurs, getters/setters",
+      "Gestion des données d'équipe via ArrayList",
+      "Interface graphique en Java Swing",
+      "Projet synthèse POO — note parfaite",
+    ],
+    en: [
       "Three-class architecture: Player, Team, Main",
       "Encapsulation with constructors, getters/setters",
       "ArrayList-based team and player management",
       "Graphical UI built with Java Swing",
-      "Received perfect marks as OOP capstone project",
+      "OOP capstone project — perfect grade",
     ],
   },
   "password-manager": {
     tech: ["Python", "Tkinter", "ttkbootstrap"],
-    bullets: [
+    fr: [
+      "Génère des mots de passe aléatoires sécurisés",
+      "Stockage local des identifiants en JSON",
+      "Interface à trois pages : accueil, générateur, gestionnaire",
+      "Thème Darkly via ttkbootstrap",
+      "En développement actif — authentification et chiffrement prévus",
+    ],
+    en: [
       "Generates strong random passwords",
       "Stores credentials locally in JSON",
       "Three-page UI: home, generator, manager",
       "Darkly theme via ttkbootstrap",
-      "In active development — roadmap includes auth and encryption",
+      "In active development — auth and encryption on the roadmap",
     ],
   },
   "steam-laravel": {
     tech: ["Laravel", "PHP", "MySQL", "Blade"],
-    bullets: [
+    fr: [
+      "Site transactionnel complet avec authentification utilisateur",
+      "Catalogue de jeux avec achat et panier",
+      "Base de données via migrations Laravel et Eloquent ORM",
+      "Templates Blade pour le rendu côté serveur",
+      "Projet final du cours Développement Web 3",
+    ],
+    en: [
       "Full transactional website with user authentication",
       "Game catalog with purchases and shopping cart",
       "Database-driven with Laravel migrations and Eloquent ORM",
@@ -56,7 +92,16 @@ export const PROJECT_DETAILS: Record<string, ProjectMeta> = {
   },
   "gesticlean": {
     tech: ["C#", "XAML", ".NET", "WPF"],
-    bullets: [
+    fr: [
+      "CRUD complet sur Employés, Clients, Projets, Assignations",
+      "Pattern Singleton pour les opérations de base de données",
+      "Compte admin avec mot de passe haché et contrôle d'accès par rôle",
+      "Export CSV des données de projets",
+      "IDs et numéros de projet auto-générés",
+      "Empêche l'assignation d'un employé sur deux projets simultanés",
+      "Projet d'équipe : Dylan Johnson & Samuel Lacoursière",
+    ],
+    en: [
       "Full CRUD on Employees, Clients, Projects, Assignments",
       "Singleton pattern for centralized database operations",
       "Admin account with hashed password and role-based access",
@@ -68,7 +113,15 @@ export const PROJECT_DETAILS: Record<string, ProjectMeta> = {
   },
   "clanker": {
     tech: ["Python", "discord.py", "apscheduler", "Raspberry Pi"],
-    bullets: [
+    fr: [
+      "Commandes : !ping, !fact, !meme, !actu, !whoami, !uptime, !horaire",
+      "Système anti-spam avec cooldowns, strikes et ban temporaire",
+      "Journalisation automatique des événements de modération",
+      "Messages de bienvenue ASCII pour les nouveaux membres",
+      "Tâches planifiées via apscheduler",
+      "Déployable sur PC ou Raspberry Pi, Docker optionnel",
+    ],
+    en: [
       "Commands: !ping, !fact, !meme, !actu, !whoami, !uptime, !horaire",
       "Anti-spam system with cooldowns, strikes and temp-ban",
       "Auto-logging of all moderation events",

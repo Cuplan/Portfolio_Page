@@ -6,7 +6,7 @@ import { PROJECT_DETAILS } from "../constants/projects";
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const navigate = useNavigate();
 
   const project = t.projects.items.find((p) => p.slug === slug);
@@ -84,7 +84,7 @@ export default function ProjectDetail() {
             <div>
               <Prompt cmd="cat features.txt" />
               <ul className="space-y-1.5 pl-5">
-                {meta.bullets.map((bullet, i) => (
+                {meta[lang].map((bullet, i) => (
                   <li key={i} className="flex gap-2 text-sm text-zinc-400 dark:text-zinc-400">
                     <span className="text-day-accent/50 dark:text-green-600/40 select-none shrink-0">▸</span>
                     {bullet}
