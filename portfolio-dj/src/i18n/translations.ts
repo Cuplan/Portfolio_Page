@@ -123,13 +123,14 @@ const fr = {
   timeline: {
     title: "Parcours",
     items: [
-      { period: "2023 – 2026", org: "Cégep de Trois-Rivières", role: "DEC – Informatique",        type: "edu",       tag: "Formation"  },
+      { period: "2024 – 2027", org: "Cégep de Trois-Rivières", role: "DEC – Informatique",        type: "edu",       tag: "Formation"  },
+      { period: "2026",        org: "Transport Valois",         role: "Stage en informatique",     type: "work",      tag: "Stage"      },
       { period: "2024 – auj.", org: "Cégep de Trois-Rivières", role: "Tuteur en programmation",   type: "work",      tag: "Travail"    },
-      { period: "2024",        org: "Transport Valois",         role: "Stage en informatique",     type: "work",      tag: "Stage"      },
-      { period: "2022 – auj.", org: "Bonbons Mélangés",        role: "Responsable IT & Web",      type: "work",      tag: "Travail"    },
       { period: "2023 – auj.", org: "Galerie d'art du Parc",   role: "Bénévolat",                 type: "volunteer", tag: "Bénévolat"  },
+      { period: "2022 – 2025", org: "Bonbons Mélangés",        role: "Responsable IT & Web",      type: "work",      tag: "Travail"    },
       { period: "2022",        org: "PTW",                      role: "Testeur de jeux vidéo",     type: "work",      tag: "Travail"    },
       { period: "2021 – 2022", org: "Ville de Montréal",       role: "Col blanc",                 type: "work",      tag: "Travail"    },
+      { period: "2016 – 2020", org: "Candy Shop",              role: "Employé",                   type: "work",      tag: "Travail"    },
     ],
   },
 };
@@ -257,13 +258,14 @@ const en: typeof fr = {
   timeline: {
     title: "Journey",
     items: [
-      { period: "2023 – 2026", org: "Cégep de Trois-Rivières", role: "DEC – Computer Science",  type: "edu",       tag: "Education"  },
+      { period: "2024 – 2027", org: "Cégep de Trois-Rivières", role: "DEC – Computer Science",  type: "edu",       tag: "Education"  },
+      { period: "2026",        org: "Transport Valois",         role: "IT Internship",           type: "work",      tag: "Internship" },
       { period: "2024 – now",  org: "Cégep de Trois-Rivières", role: "Programming Tutor",       type: "work",      tag: "Work"       },
-      { period: "2024",        org: "Transport Valois",         role: "IT Internship",           type: "work",      tag: "Internship" },
-      { period: "2022 – now",  org: "Bonbons Mélangés",        role: "IT & Web Manager",        type: "work",      tag: "Work"       },
       { period: "2023 – now",  org: "Galerie d'art du Parc",   role: "Volunteer",               type: "volunteer", tag: "Volunteer"  },
+      { period: "2022 – 2025", org: "Bonbons Mélangés",        role: "IT & Web Manager",        type: "work",      tag: "Work"       },
       { period: "2022",        org: "PTW",                      role: "Video Game Tester",       type: "work",      tag: "Work"       },
       { period: "2021 – 2022", org: "Ville de Montréal",       role: "White Collar Worker",     type: "work",      tag: "Work"       },
+      { period: "2016 – 2020", org: "Candy Shop",              role: "Employee",                type: "work",      tag: "Work"       },
     ],
   },
 };
