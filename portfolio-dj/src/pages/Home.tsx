@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import { useLang } from "../hooks/useLang";
 import { TermWindow, Prompt } from "../components/TermWindow";
 import UptimeWidget from "../components/UptimeWidget";
+import Timeline from "../components/Timeline";
 import {
   SiReact,
   SiMysql,
@@ -155,6 +156,9 @@ export default function Home() {
 
         {/* Uptime widget */}
         <UptimeWidget />
+
+        {/* Timeline */}
+        <Timeline />
 
       </div>
     </section>

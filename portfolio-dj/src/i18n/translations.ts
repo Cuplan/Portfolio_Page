@@ -54,46 +54,54 @@ const fr = {
   },
   projects: {
     title: "Mes projets",
-    subtitle: "Un aperçu de ce que j'ai construit. Cliquez pour voir le code.",
+    subtitle: "Un aperçu de ce que j'ai construit. Cliquez pour voir les détails.",
     viewCode: "Voir le code",
+    viewDetails: "Voir les détails",
     items: [
       {
+        slug: "ml-weka",
         title: "Projet Machine Learning en Java",
         description: "Modèle prédictif simple avec la bibliothèque Weka. Base du machine learning en Java.",
         repoUrl: "https://github.com/Cuplan/projetML.git",
         image: "/weka.png",
       },
       {
+        slug: "naruto-api",
         title: "Gestion d'API Naruto (Projet d'école)",
         description: "Site gérant l'API dattebayo. Premier vrai projet en React + JavaScript.",
         repoUrl: "https://github.com/Cuplan/ProjetDevWeb2.git",
         image: "api-naru.png",
       },
       {
+        slug: "basketball-java",
         title: "Gestion d'équipe de basket en Java",
         description: "Projet synthèse POO. Gestion d'équipe de basketball et UX en Java Swing.",
         repoUrl: "https://github.com/Cuplan/BasketTeam_Poo.git",
         image: "basket.png",
       },
       {
+        slug: "password-manager",
         title: "Gestionnaire de mots de passe (Python)",
         description: "Connexions, base d'utilisateurs, génération de MDP, stockage sécurisé. Ttkinter. [WIP]",
         repoUrl: "https://github.com/Cuplan/Mdp_Gestionnaire.git",
         image: "gestionmdp.jpg",
       },
       {
+        slug: "steam-laravel",
         title: "Projet Steam (Laravel)",
         description: "Site transactionnel complet avec base de données. Projet final de Développement Web 3.",
         repoUrl: "https://github.com/Cuplan/Steam",
         image: "steam.png",
       },
       {
+        slug: "gesticlean",
         title: "Gesticlean Inc. (C# / XAML)",
         description: "App de gestion de projets : employés, clients, assignations, salaires. Projet final en programmation graphique.",
         repoUrl: "https://github.com/Cuplan/Gesticlean_Inc",
         image: "gesticlean.png",
       },
       {
+        slug: "clanker",
         title: "Clanker - Bot Discord (Python)",
         description: "Bot Discord fonctionnel. Commandes, gestion de serveur et automatisation.",
         repoUrl: "https://github.com/Cuplan/Clanker",
@@ -111,6 +119,18 @@ const fr = {
     subjectPrefix: "Message de",
     linksTitle: "Liens importants",
     downloadCV: "Télécharger mon C.V",
+  },
+  timeline: {
+    title: "Parcours",
+    items: [
+      { period: "2023 – 2026", org: "Cégep de Trois-Rivières", role: "DEC – Informatique", type: "edu",       tag: "Formation"  },
+      { period: "2024 – auj.", org: "Cégep de Trois-Rivières", role: "Tuteur en programmation",  type: "work",      tag: "Travail"    },
+      { period: "2024",        org: "Transport Valois",         role: "Stage en informatique",    type: "work",      tag: "Stage"      },
+      { period: "2022 – auj.", org: "Bonbons Mélangés",        role: "Responsable IT & Web",     type: "work",      tag: "Travail"    },
+      { period: "2023 – auj.", org: "Galerie d'art du Parc",   role: "Bénévolat",                type: "volunteer", tag: "Bénévolat"  },
+      { period: "2022",        org: "PTW",                      role: "Testeur de jeux vidéo",    type: "work",      tag: "Travail"    },
+      { period: "2021 – 2022", org: "Ville de Montréal",       role: "Col blanc",                type: "work",      tag: "Travail"    },
+    ],
   },
 };
 
@@ -168,46 +188,54 @@ const en: typeof fr = {
   },
   projects: {
     title: "My Projects",
-    subtitle: "A look at what I've built. Click to see the code.",
+    subtitle: "A look at what I've built. Click to see details.",
     viewCode: "View code",
+    viewDetails: "View details",
     items: [
       {
+        slug: "ml-weka",
         title: "Machine Learning Project in Java",
         description: "Simple predictive model using the Weka library. ML fundamentals in Java.",
         repoUrl: "https://github.com/Cuplan/projetML.git",
         image: "/weka.png",
       },
       {
+        slug: "naruto-api",
         title: "Naruto API Manager (School Project)",
         description: "Web app using the dattebayo API. My first real React + JavaScript project.",
         repoUrl: "https://github.com/Cuplan/ProjetDevWeb2.git",
         image: "api-naru.png",
       },
       {
+        slug: "basketball-java",
         title: "Basketball Team Manager in Java",
         description: "OOP capstone project. Basketball team management and UX in Java Swing.",
         repoUrl: "https://github.com/Cuplan/BasketTeam_Poo.git",
         image: "basket.png",
       },
       {
+        slug: "password-manager",
         title: "Password Manager (Python)",
         description: "User login, database, password generation, secure storage. Ttkinter. [WIP]",
         repoUrl: "https://github.com/Cuplan/Mdp_Gestionnaire.git",
         image: "gestionmdp.jpg",
       },
       {
+        slug: "steam-laravel",
         title: "Steam Project (Laravel)",
         description: "Full transactional website with database. Final project for Web Development 3.",
         repoUrl: "https://github.com/Cuplan/Steam",
         image: "steam.png",
       },
       {
+        slug: "gesticlean",
         title: "Gesticlean Inc. (C# / XAML)",
         description: "Project management app: employees, clients, assignments, salary tracking. Final graphical programming project.",
         repoUrl: "https://github.com/Cuplan/Gesticlean_Inc",
         image: "gesticlean.png",
       },
       {
+        slug: "clanker",
         title: "Clanker - Discord Bot (Python)",
         description: "Fully functional Discord bot. Commands, server management and automation.",
         repoUrl: "https://github.com/Cuplan/Clanker",
@@ -225,6 +253,18 @@ const en: typeof fr = {
     subjectPrefix: "Message from",
     linksTitle: "Important Links",
     downloadCV: "Download my Resume",
+  },
+  timeline: {
+    title: "Journey",
+    items: [
+      { period: "2023 – 2026", org: "Cégep de Trois-Rivières", role: "DEC – Computer Science",  type: "edu",       tag: "Education"  },
+      { period: "2024 – now",  org: "Cégep de Trois-Rivières", role: "Programming Tutor",       type: "work",      tag: "Work"       },
+      { period: "2024",        org: "Transport Valois",         role: "IT Internship",           type: "work",      tag: "Internship" },
+      { period: "2022 – now",  org: "Bonbons Mélangés",        role: "IT & Web Manager",        type: "work",      tag: "Work"       },
+      { period: "2023 – now",  org: "Galerie d'art du Parc",   role: "Volunteer",               type: "volunteer", tag: "Volunteer"  },
+      { period: "2022",        org: "PTW",                      role: "Video Game Tester",       type: "work",      tag: "Work"       },
+      { period: "2021 – 2022", org: "Ville de Montréal",       role: "White Collar Worker",     type: "work",      tag: "Work"       },
+    ],
   },
 };
 

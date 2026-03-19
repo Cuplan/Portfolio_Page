@@ -422,6 +422,9 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Terminal interactif"
       className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center bg-black/60 backdrop-blur-sm font-mono pt-4 sm:pt-0"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
@@ -429,7 +432,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
         {/* Title bar */}
         <div className="bg-day-nav dark:bg-zinc-900 border border-zinc-600/40 dark:border-green-500/30 border-b-0 px-4 py-2 flex items-center justify-between select-none">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-red-400/80 cursor-pointer" onClick={onClose} />
+            <div className="w-3 h-3 rounded-full bg-red-400/80 cursor-pointer" role="button" aria-label="Fermer le terminal" onClick={onClose} />
             <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
             <div className="w-3 h-3 rounded-full bg-green-400/80" />
             <span className="ml-2 text-zinc-400/60 dark:text-green-500/40 text-xs">
@@ -438,6 +441,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
           </div>
           <button
             onClick={onClose}
+            aria-label="Fermer le terminal"
             className="text-zinc-500 hover:text-zinc-200 dark:hover:text-zinc-300 transition-colors"
           >
             <FaTimes size={12} />

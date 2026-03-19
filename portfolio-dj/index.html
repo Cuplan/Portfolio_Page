@@ -1,28 +1,60 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#a6e22e" />
     <title>Portfolio - Dylan Johnson</title>
 
     <!-- SEO -->
-    <meta name="description" content="Dylan Johnson - Computer science student passionate about AI and data science. React, Python, Java, C#, SQL." />
+    <meta name="description" content="Dylan Johnson — Étudiant en informatique à Trois-Rivières, QC. Passionné d'IA et de data science. React, Python, Java, C#, SQL." />
+    <meta name="keywords" content="Dylan Johnson, développeur, informatique, Trois-Rivières, Quebec, React, Python, Java, machine learning, portfolio" />
     <meta name="author" content="Dylan Johnson" />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://dylan-johnson-dev.vercel.app" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dylan-johnson-dev.vercel.app" />
-    <meta property="og:title" content="Dylan Johnson - Portfolio" />
-    <meta property="og:description" content="CS student passionate about AI and data science. React, Python, Java, C#, SQL." />
+    <meta property="og:title" content="Dylan Johnson — Développeur & Étudiant en informatique" />
+    <meta property="og:description" content="Portfolio de Dylan Johnson. React, Python, Java, C#, Machine Learning. Ouvert aux opportunités." />
     <meta property="og:image" content="https://dylan-johnson-dev.vercel.app/ma-photo.jpg" />
+    <meta property="og:locale" content="fr_CA" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Dylan Johnson - Portfolio" />
-    <meta name="twitter:description" content="CS student passionate about AI and data science. React, Python, Java, C#, SQL." />
+    <meta name="twitter:title" content="Dylan Johnson — Développeur & Étudiant en informatique" />
+    <meta name="twitter:description" content="Portfolio de Dylan Johnson. React, Python, Java, C#, Machine Learning." />
     <meta name="twitter:image" content="https://dylan-johnson-dev.vercel.app/ma-photo.jpg" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dylan Johnson",
+      "jobTitle": "Computer Science Student & Developer",
+      "url": "https://dylan-johnson-dev.vercel.app",
+      "email": "johnsondylan14@gmail.com",
+      "sameAs": [
+        "https://github.com/Cuplan",
+        "https://www.linkedin.com/in/dylan-johnson-447681280/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Trois-Rivières",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Cégep de Trois-Rivières"
+      },
+      "knowsAbout": ["React", "Python", "Java", "C#", "SQL", "Machine Learning", "Data Science", "Discord bots", "Laravel"]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

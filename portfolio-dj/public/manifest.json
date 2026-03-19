@@ -1,0 +1,16 @@
+{
+  "name": "Dylan Johnson — Portfolio",
+  "short_name": "DJ Portfolio",
+  "description": "Portfolio de Dylan Johnson, étudiant en informatique et développeur à Trois-Rivières, QC.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#a6e22e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

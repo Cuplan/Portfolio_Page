@@ -76,6 +76,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
             <button
               onClick={onOpenTerminal}
               title="Open terminal  (`)"
+              aria-label="Ouvrir le terminal interactif"
               className="px-2 py-1 border border-zinc-600/40 dark:border-green-500/30 text-zinc-400 dark:text-green-500 text-xs hover:border-day-accent dark:hover:border-green-400 hover:text-day-accent dark:hover:text-green-300 transition-colors duration-150 tracking-wider"
             >
               [&gt;_]
@@ -95,6 +96,7 @@ export default function Navbar({ onOpenTerminal }: NavbarProps) {
 
             <button
               onClick={toggleLang}
+              aria-label={lang === "fr" ? "Switch to English" : "Passer en français"}
               className="px-2 py-1 border border-zinc-600/40 dark:border-green-500/30 text-zinc-400 dark:text-green-500 text-xs hover:border-zinc-400 dark:hover:border-green-400 hover:text-zinc-200 dark:hover:text-green-300 transition-colors duration-150 tracking-wider"
             >
               [{lang === "fr" ? "EN" : "FR"}]

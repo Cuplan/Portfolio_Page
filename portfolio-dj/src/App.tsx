@@ -5,6 +5,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home";
 import Projets from "./pages/Projets";
+import ProjectDetail from "./pages/ProjectDetail";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
@@ -103,6 +104,14 @@ function AppInner() {
                 element={
                   <PageTransition>
                     <Projets />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path="/projets/:slug"
+                element={
+                  <PageTransition>
+                    <ProjectDetail />
                   </PageTransition>
                 }
               />

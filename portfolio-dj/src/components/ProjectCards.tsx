@@ -1,25 +1,24 @@
-import { FaGithub } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface ProjectCardsProps {
+  slug: string;
   title: string;
   description: string;
-  repoUrl: string;
   image: string;
-  viewCode: string;
+  viewDetails: string;
 }
 
 export default function ProjectCards({
+  slug,
   title,
   description,
-  repoUrl,
   image,
-  viewCode,
+  viewDetails,
 }: ProjectCardsProps) {
   return (
-    <a
-      href={repoUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={`/projets/${slug}`}
+      aria-label={`Voir les détails du projet : ${title}`}
       className="flex flex-col border border-zinc-600/25 dark:border-green-500/15 hover:border-day-accent/50 dark:hover:border-green-400/40 transition-all duration-200 group overflow-hidden bg-day-card dark:bg-zinc-950"
     >
       {/* Terminal title bar */}
@@ -34,6 +33,7 @@ export default function ProjectCards({
       <img
         src={image}
         alt={`Preview: ${title}`}
+        loading="lazy"
         className="w-full h-32 object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-200"
       />
 
@@ -49,10 +49,10 @@ export default function ProjectCards({
           {description}
         </p>
         <div className="flex items-center gap-1.5 mt-2 text-xs text-zinc-600 dark:text-green-600/30 group-hover:text-day-accent dark:group-hover:text-green-400 transition-colors">
-          <FaGithub size={11} />
-          <span>{viewCode}</span>
+          <span>→</span>
+          <span>{viewDetails}</span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

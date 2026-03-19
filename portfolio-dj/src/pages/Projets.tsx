@@ -27,12 +27,12 @@ export default function Projects() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {t.projects.items.map((project) => (
             <ProjectCards
-              key={project.repoUrl}
+              key={project.slug}
+              slug={project.slug}
               title={project.title}
               description={project.description}
-              repoUrl={project.repoUrl}
               image={project.image}
-              viewCode={t.projects.viewCode}
+              viewDetails={t.projects.viewDetails}
             />
           ))}
         </div>
