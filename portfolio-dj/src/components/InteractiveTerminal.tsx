@@ -188,7 +188,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onDropDB, onCrash
               "     ████░░░░░░████       Stack:    React · Python · Java",
               "      ████░░░░████        Age:      28",
               "       ██████████         Status:   ● open to work",
-              "                          Location: Québec, CA",
+              "                          Location: Trois-Rivières, QC, CA",
               "                          Coffee:   ████████░░ 80%",
               "                          Build:    passing ✓",
             ],

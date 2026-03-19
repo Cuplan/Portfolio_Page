@@ -19,7 +19,7 @@ export default function UptimeWidget() {
         <Prompt cmd="uptime" />
         <div className="pl-5 space-y-3">
           <p className="text-xs text-day-muted dark:text-zinc-600 select-none">
-            {hh}:{mm}:{ss} up 22 years  |  load avg: 0.42, 0.38, 0.31
+            {hh}:{mm}:{ss} up 28 years  |  load avg: 0.42, 0.38, 0.31
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-1.5 text-xs">
@@ -33,7 +33,7 @@ export default function UptimeWidget() {
 
             <div className="flex gap-3">
               <span className="text-day-accent dark:text-green-600 w-16 shrink-0 select-none">location</span>
-              <span className="text-zinc-300 dark:text-zinc-300">Québec, CA</span>
+              <span className="text-zinc-300 dark:text-zinc-300">Trois-Rivières, QC, CA</span>
             </div>
 
             <div className="flex gap-3 sm:col-span-2">
