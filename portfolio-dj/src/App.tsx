@@ -18,6 +18,7 @@ import InteractiveTerminal from "./components/InteractiveTerminal";
 import NavCommandBar from "./components/NavCommandBar";
 import EasterEggs from "./components/EasterEggs";
 
+
 const SESSION_KEY = "portfolio-intro-shown";
 
 function PageTransition({ children }: { children: ReactNode }) {
